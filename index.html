@@ -24,34 +24,12 @@
 
 <body>
 
-
-
-    <!-- table  -->
-    <!-- <div class="container-fluid text-center" id="major"> -->
-
-
-
     <div id="maskColor" style="background: linear-gradient(to right, #007FE4 0%,#00C1FF 100%);">
         <img src="icon/smile.png" width="45px" style="margin-top: 15px;margin-left: 45px;position:absolute" />
         <h1 class="major">Smile or Scowl? Looking at Infographics Through the Affective Lens</h1>
         <button class="tab_button_d" onclick="setTab('one',1,2)" id="one1">Design Heuristics</button>
         <button class="tab_button_s" onclick="setTab('one',2,2)" id="one2">CA Space</button>
     </div>
-
-    <!-- <div style="width: 500px;text-align: center;"> 
-		<p>
-		Here is intro.
-		xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-		xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-
-		</p>
-	</div> -->
-
-    <!-- <p style="margin-left: 650px;font-size: 10px;">Copyright©2020 Intelligent Big Data Visualization Lab, Tongji University ,Shanghai, China</p>
-	 -->
-
-
-
 
     <div style="display: none;" id="con_one_2">
         <div id="scatter2D"></div>
@@ -63,432 +41,370 @@
     </div>
 
     <div id="con_one_1" style="display: block; clear: both; text-align:center;">
-        <p class="sub" style="margin-top: 100px;font-size:26px">Design Heuristics for Affect-Realted Factors in Infographics</p>
+        <p class="sub" style="margin-top: 120px;font-size:20px">Design Heuristics for Affect-Realted Factors in Infographics</p>
 
-
-        <!-- <p style="margin-left: 650px;font-size: 10px;">Copyright©2020 Intelligent Big Data Visualization Lab, Tongji University ,Shanghai, China</p>
-	 -->
-
-
-        <div class="container-fluid" id="ds-container">
-            <div class="col-md-10 col-md-offset-1" style="margin-left: 8%;">
-                <table class="table table-condensed table-bordered" id="design-space" style="table-layout:automatic;border-radius: 5px;">
-                    <tbody>
-
-                        <!-- <tr>
-                <td colspan="2" class="no-border"><b></b></td>
-                <td colspan="37" class="heavy-bottom"><b >HINTS TO TRIGGER WANTED EMOTIONS</b></td>
-            </tr> -->
-
-
-                        <tr>
-                            <td colspan="2" class="no-border"><b></b></td>
-                            <td colspan="8" class="heavy-bottom black" title="visual representations and emphasizes communicative intents" deta-title><b style="color:white">GRAPHIC COMMUNICATION</b></td>
-                            <td colspan="10" class="heavy-bottom black" title="narrative guides the audience through intended emotional track through wording, phrasing and content structuring" deta-title><b style="color:white">NARRATIVE</b></td>
-                        </tr>
-
-                        <tr>
-                            <td colspan="2" class="no-border"><b></b></td>
-                            <td colspan="5" class="heavy-bottom-2 dimblue" title="mapping data to graphical elements" deta-title><b style="color:white;font-size: 9px;">Data Visualization</b></td>
-                            <td colspan="3" class="heavy-bottom-2 dimblue" title="decorative patterns, which are added to data visualization to increase its attractiveness" deta-title><b style="color:white;font-size: 10px;">Embellishment</b></td>
-                            <td colspan="5" class="heavy-bottom-2 dimblue" title="telling data to the audience with the goal of
-                            enhancing interpretation and expressing ideas." deta-title><b style="color:white;font-size: 10px;">Data Explanation</b></td>
-                            <td colspan="5" class="heavy-bottom-2 dimblue" title="linguistic and literary tactics independent from data that
-                            charge the narration with emotional power" deta-title><b style="color:white;font-size: 10px;">Language & Tone</b></td>
-                        </tr>
-
-                        <!-- <tr>
-                <td colspan="2" class="no-border"><b></b></td>
-                <td colspan="4" class="heavy-bottom" title="Presentation of Information(呈现方式)" deta-title><b>Method</b></td>
-                <td colspan="2" class="heavy-bottom" title="Technique of data Rendering(数据渲染)" deta-title><b>Rendering</b></td>
-                <td colspan="3" class="heavy-bottom" title="Degree of Decoration(装饰程度)" deta-title><b>Data Ink Ratio<b></td> 
-                <td colspan="4" class="heavy-bottom" title="Decorative Techniques(装饰手法)" deta-title><b>Method<b></td> 
-                <td colspan="2" class="heavy-bottom" title="Add Meaning to Colors(为颜色添加意义)" deta-title><b>Semantics</b></td>
-                <td colspan="4" class="heavy-bottom" title="Color Ccheme(配色方案)" deta-title><b>Scheme</b></td>
-                <td colspan="3" class="heavy-bottom" title="Single Visualization as the Core(单个可视化)" deta-title><b>Single</b></td>
-                <td colspan="5" class="heavy-bottom" title="Multiple visualizations exist at the same time(多个可视化)" deta-title><b>Multiple</b></td>
-                <td colspan="4" class="heavy-bottom" title="Using rhetoric(使用修辞)" deta-title><b>Figurative Language</b></td>
-                <td colspan="4" class="heavy-bottom" title="Dialogue with readers(与读者对话)" deta-title><b>Dialogue</b></td>
-                <td colspan="3" class="heavy-bottom" title="Design plot(设计情节)" deta-title><b>Plot</b></td>
-            </tr> -->
-
-
-
-                        <tr style="height: 150px;">
-                            <td name="si1" class="heavy-left">
-                                <div style="margin-top: 60px;text-align: center;font-weight:900;"><span><small>Emotions</small></span></div>
-                            </td>
-                            <td name="si2" class="heavy-left">
-                                <div style="margin-top: 60px;text-align: center;font-weight:900;"><span><small>Number<br>of <br>Examples</small></span></div>
-                            </td>
-
-                            <td name="si01" class=" si01 rotate" style="width:150px" title="colors used with most frequency" deta-title>
-                                <div> <span>	<small id="si01">	Color Pallette	</small>	</span> </div>
-                            </td>
-                            <td name="si02" class=" si02 rotate" title="choose color based on object-color associations" deta-title>
-                                <div> <span>	<small id="si02">	Semantic Color	</small>	</span> </div>
-                            </td>
-                            <td name="si03" class=" si03 rotate" title="an ideogram that conveys its meaning through its pictorial resemblance to data" deta-title>
-                                <div> <span>	<small id="si03">	Pictogram	</small>	</span> </div>
-                            </td>
-                            <td name="si04" class=" si04 rotate" title="organizes visual marks into a metaphorical imagery" deta-title>
-                                <div> <span>	<small id="si04">	Metaphorical Arrangement	</small>	</span> </div>
-                            </td>
-                            <td name="si05" class=" si05 rotate" title="substitute a visualization with similar imagery or vice versa, substitutes imagery with a visualization" deta-title>
-                                <div> <span>	<small id="si05">	Metaphorical Replacement	</small>	</span> </div>
-                            </td>
-                            <td name="si06" class=" si06 rotate" title="draw tailored objects or characters juxtaposed or superposed with visualizations" deta-title>
-                                <div> <span>	<small id="si06">	Customized Illustration	</small>	</span> </div>
-                            </td>
-                            <td name="si07" class=" si07 rotate" title="a picture made using a camera" deta-title>
-                                <div> <span>	<small id="si07">	Photograph	</small>	</span> </div>
-                            </td>
-                            <td name="si08" class=" si08 rotate" title="arrange a specific scene using the graphical elements and inviting the audience into the story" deta-title>
-                                <div> <span>	<small id="si08">	Scene Framing	</small>	</span> </div>
-                            </td>
-                            <td name="si09" class=" si09 rotate" title="highlight the key facts in data using the strengthening of words such as big bold fonts and pop-out colors" deta-title>
-                                <div> <span>	<small id="si09">	Emphasis	</small>	</span> </div>
-                            </td>
-                            <td name="si10" class=" si10 rotate" title="tell a fact more than once" deta-title>
-                                <div> <span>	<small id="si10">	Repitition	</small>	</span> </div>
-                            </td>
-                            <td name="si11" class=" si11 rotate" title="expresses data quantities using a perceivable scale (eg. per second, per day)" deta-title>
-                                <div> <span>	<small id="si11">	Narrowing Down	</small>	</span> </div>
-                            </td>
-                            <td name="si12" class=" si12 rotate" title="put the most captivating facts at the bottom of the infographic" deta-title>
-                                <div> <span>	<small id="si12">	Saving Key Facts to the End	</small>	</span> </div>
-                            </td>
-                            <td name="si13" class=" si13 rotate" title="omit some data facts and make people guess" deta-title>
-                                <div> <span>	<small id="si13">	Deliberate Omission	</small>	</span> </div>
-                            </td>
-                            <td name="si14" class=" si14 rotate" title="talk directly to the viewers by using second person point of view or imperative sentences" deta-title>
-                                <div> <span>	<small id="si14">	Addressing the Audience	</small>	</span> </div>
-                            </td>
-                            <td name="si15" class=" si15 rotate" title="a sentence that conveys a strong emotion and ends with an exclamation mark (!)" deta-title>
-                                <div> <span>	<small id="si15">	Exclamatory Sentence	</small>	</span> </div>
-                            </td>
-                            <td name="si16" class=" si16 rotate" title="a question asked just for effect, or to lay emphasis on some point being discussed, when no real answer is expected" deta-title>
-                                <div> <span>	<small id="si16">	Rhetorical Question	</small>	</span> </div>
-                            </td>
-                            <td name="si17" class=" si17 rotate" title="ask a question without providing answers; often appears at the end of the infographics" deta-title>
-                                <div> <span>	<small id="si17">	Open Question	</small>	</span> </div>
-                            </td>
-                            <td name="si18" class=" si18 rotate" title="phrasing that goes beyond the literal meaning of words such as metaphor, simile, personification, and irony" deta-title>
-                                <div> <span>	<small id="si18">	Figurative sentence	</small>	</span> </div>
-                            </td>
-                            <!-- <td name="si19" class=" si19 rotate" title="xxx" deta-title>
-                                <div> <span>	<small id="si19">	metaphor / simile	</small>	</span> </div>
-                            </td>
-                            <td name="si20" class=" si20 rotate" title="xxx" deta-title>
-                                <div> <span>	<small id="si20">	personification	</small>	</span> </div>
-                            </td>
-                            <td name="si21" class=" si21 rotate" title="xxx" deta-title>
-                                <div> <span>	<small id="si21">	irony	</small>	</span> </div>
-                            </td> -->
-
-
-
-
-                            <tr>
-                                <td class="heavy-left"><b>happy</b></td>
-                                <td class="heavy-left"><b name="s1Sum">48</b></td>
-                                <td name="s101" class="active-cell s101"><img src="icon/1.png" style="height:20px; width:30px"></img>
-                                </td>
-                                <td name="s102" class="active-cell s102">16</td>
-                                <td name="s103" class="active-cell s103">20</td>
-                                <td name="s104" class="active-cell s104">7</td>
-                                <td name="s105" class="active-cell s105">7</td>
-                                <td name="s106" class="active-cell s106">20</td>
-                                <td name="s107" class="active-cell s107">5</td>
-                                <td name="s108" class="active-cell s108">4</td>
-                                <td name="s109" class="active-cell s109">7</td>
-                                <td name="s110" class="active-cell s110"></td>
-                                <td name="s111" class="active-cell s111"></td>
-                                <td name="s112" class="active-cell s112"></td>
-                                <td name="s113" class="active-cell s113"></td>
-                                <td name="s114" class="active-cell s114">15</td>
-                                <td name="s115" class="active-cell s115">5</td>
-                                <td name="s116" class="active-cell s116">3</td>
-                                <td name="s117" class="active-cell s117"></td>
-                                <td name="s118" class="active-cell s118">1</td>
-                                <!-- <td name="s119" class="active-cell s119">0</td>
-                                <td name="s120" class="active-cell s120">1</td>
-                                <td name="s121" class="active-cell s121">0</td> -->
-
-
-
-                            </tr>
-
-
-
-                            <tr>
-                                <td class="heavy-left"><b>suprised</b></td>
-                                <td class="heavy-left"><b name="s2Sum">46</b></td>
-                                <td name="s201" class="active-cell s201"><img src="icon/2.png" style="height:20px; width:30px"></img>
-                                </td>
-                                <td name="s202" class="active-cell s202">7</td>
-                                <td name="s203" class="active-cell s203">18</td>
-                                <td name="s204" class="active-cell s204">3</td>
-                                <td name="s205" class="active-cell s205">2</td>
-                                <td name="s206" class="active-cell s206">6</td>
-                                <td name="s207" class="active-cell s207">6</td>
-                                <td name="s208" class="active-cell s208">1</td>
-                                <td name="s209" class="active-cell s209">15</td>
-                                <td name="s210" class="active-cell s210">1</td>
-                                <td name="s211" class="active-cell s211">10</td>
-                                <td name="s212" class="active-cell s212">1</td>
-                                <td name="s213" class="active-cell s213">1</td>
-                                <td name="s214" class="active-cell s214">13</td>
-                                <td name="s215" class="active-cell s215">5</td>
-                                <td name="s216" class="active-cell s216">1</td>
-                                <td name="s217" class="active-cell s217"></td>
-                                <td name="s218" class="active-cell s218">2</td>
-                                <!-- <td name="s219" class="active-cell s219">1</td>
-                                <td name="s220" class="active-cell s220">0</td>
-                                <td name="s221" class="active-cell s221">0</td> -->
-
-
-                            </tr>
-
-
-                            <tr>
-                                <td class="heavy-left"><b>exicted</b></td>
-                                <td class="heavy-left"><b name="s3Sum">14</b></td>
-                                <td name="s301" class="active-cell s301"><img src="icon/3.png" style="height:20px; width:30px"></img>
-                                </td>
-                                <td name="s302" class="active-cell s302">5</td>
-                                <td name="s303" class="active-cell s303">8</td>
-                                <td name="s304" class="active-cell s304"></td>
-                                <td name="s305" class="active-cell s305"></td>
-                                <td name="s306" class="active-cell s306">4</td>
-                                <td name="s307" class="active-cell s307">2</td>
-                                <td name="s308" class="active-cell s308"></td>
-                                <td name="s309" class="active-cell s309">4</td>
-                                <td name="s310" class="active-cell s310"></td>
-                                <td name="s311" class="active-cell s311"></td>
-                                <td name="s312" class="active-cell s312"></td>
-                                <td name="s313" class="active-cell s313"></td>
-                                <td name="s314" class="active-cell s314">2</td>
-                                <td name="s315" class="active-cell s315">1</td>
-                                <td name="s316" class="active-cell s316">2</td>
-                                <td name="s317" class="active-cell s317"></td>
-                                <td name="s318" class="active-cell s318">1</td>
-                                <!-- <td name="s319" class="active-cell s319">0</td>
-                                <td name="s320" class="active-cell s320">0</td>
-                                <td name="s321" class="active-cell s321">0</td> -->
-
-
-
-                            </tr>
-
-                            <tr>
-                                <td class="heavy-left"><b>content</b></td>
-                                <td class="heavy-left"><b name="s4Sum">22</b></td>
-                                <td name="s401" class="active-cell s401"><img src="icon/4.png" style="height:20px; width:30px"></img>
-                                </td>
-                                <td name="s402" class="active-cell s402">7</td>
-                                <td name="s403" class="active-cell s403">8</td>
-                                <td name="s404" class="active-cell s404">1</td>
-                                <td name="s405" class="active-cell s405">1</td>
-                                <td name="s406" class="active-cell s406">7</td>
-                                <td name="s407" class="active-cell s407">1</td>
-                                <td name="s408" class="active-cell s408">3</td>
-                                <td name="s409" class="active-cell s409">7</td>
-                                <td name="s410" class="active-cell s410"></td>
-                                <td name="s411" class="active-cell s411"></td>
-                                <td name="s412" class="active-cell s412"></td>
-                                <td name="s413" class="active-cell s413"></td>
-                                <td name="s414" class="active-cell s414">4</td>
-                                <td name="s415" class="active-cell s415">1</td>
-                                <td name="s416" class="active-cell s416"></td>
-                                <td name="s417" class="active-cell s417"></td>
-                                <td name="s418" class="active-cell s418">1</td>
-                                <!-- <td name="s419" class="active-cell s419">0</td>
-                                <td name="s420" class="active-cell s420">0</td>
-                                <td name="s421" class="active-cell s421">0</td> -->
-                            </tr>
-
-                            <tr>
-                                <td class="heavy-left"><b>awestruck</b></td>
-                                <td class="heavy-left"><b name="s5Sum">17</b></td>
-                                <td name="s501" class="active-cell s501"><img src="icon/5.png" style="height:20px; width:30px"></img>
-                                </td>
-                                <td name="s502" class="active-cell s502"></td>
-                                <td name="s503" class="active-cell s503">3</td>
-                                <td name="s504" class="active-cell s504">7</td>
-                                <td name="s505" class="active-cell s505"></td>
-                                <td name="s506" class="active-cell s506">1</td>
-                                <td name="s507" class="active-cell s507">3</td>
-                                <td name="s508" class="active-cell s508"></td>
-                                <td name="s509" class="active-cell s509">2</td>
-                                <td name="s510" class="active-cell s510">1</td>
-                                <td name="s511" class="active-cell s511">1</td>
-                                <td name="s512" class="active-cell s512">1</td>
-                                <td name="s513" class="active-cell s513"></td>
-                                <td name="s514" class="active-cell s514"></td>
-                                <td name="s515" class="active-cell s515">1</td>
-                                <td name="s516" class="active-cell s516"></td>
-                                <td name="s517" class="active-cell s517"></td>
-                                <td name="s518" class="active-cell s518">2</td>
-                                <!-- <td name="s519" class="active-cell s519">1</td>
-                                <td name="s520" class="active-cell s520">0</td>
-                                <td name="s521" class="active-cell s521">0</td> -->
-                            </tr>
-
-                            <tr>
-                                <td class="heavy-left"><b>hopeful</b></td>
-                                <td class="heavy-left"><b name="s6Sum">11</b></td>
-                                <td name="s601" class="active-cell s601"><img src="icon/6.png" style="height:20px; width:30px"></img>
-                                </td>
-                                <td name="s602" class="active-cell s602">2</td>
-                                <td name="s603" class="active-cell s603">5</td>
-                                <td name="s604" class="active-cell s604">1</td>
-                                <td name="s605" class="active-cell s605"></td>
-                                <td name="s606" class="active-cell s606">2</td>
-                                <td name="s607" class="active-cell s607">1</td>
-                                <td name="s608" class="active-cell s608"></td>
-                                <td name="s609" class="active-cell s609">6</td>
-                                <td name="s610" class="active-cell s610"></td>
-                                <td name="s611" class="active-cell s611">1</td>
-                                <td name="s612" class="active-cell s612"></td>
-                                <td name="s613" class="active-cell s613"></td>
-                                <td name="s614" class="active-cell s614">1</td>
-                                <td name="s615" class="active-cell s615"></td>
-                                <td name="s616" class="active-cell s616"></td>
-                                <td name="s617" class="active-cell s617"></td>
-                                <td name="s618" class="active-cell s618">1</td>
-                                <!-- <td name="s619" class="active-cell s619">1</td>
-                                <td name="s620" class="active-cell s620">0</td>
-                                <td name="s621" class="active-cell s621">0</td> -->
-
-                            </tr>
-
-                            <tr>
-                                <td class="heavy-left"><b>sad</b></td>
-                                <td class="heavy-left"><b name="s7Sum">16</b></td>
-                                <td name="s701" class="active-cell s701"><img src="icon/7.png" style="height:20px; width:30px"></img>
-                                </td>
-                                <td name="s702" class="active-cell s702">4</td>
-                                <td name="s703" class="active-cell s703">2</td>
-                                <td name="s704" class="active-cell s704">4</td>
-                                <td name="s705" class="active-cell s705">2</td>
-                                <td name="s706" class="active-cell s706"></td>
-                                <td name="s707" class="active-cell s707">3</td>
-                                <td name="s708" class="active-cell s708">1</td>
-                                <td name="s709" class="active-cell s709">7</td>
-                                <td name="s710" class="active-cell s710"></td>
-                                <td name="s711" class="active-cell s711">2</td>
-                                <td name="s712" class="active-cell s712"></td>
-                                <td name="s713" class="active-cell s713"></td>
-                                <td name="s714" class="active-cell s714">1</td>
-                                <td name="s715" class="active-cell s715">1</td>
-                                <td name="s716" class="active-cell s716"></td>
-                                <td name="s717" class="active-cell s717">1</td>
-                                <td name="s718" class="active-cell s718"></td>
-                                <!-- <td name="s719" class="active-cell s719">1</td>
-                                <td name="s720" class="active-cell s720">1</td>
-                                <td name="s721" class="active-cell s721">0</td> -->
-                            </tr>
-
-                            <tr>
-                                <td class="heavy-left"><b>concerned</b></td>
-                                <td class="heavy-left"><b name="s8Sum">42</b></td>
-                                <td name="s801" class="active-cell s801"><img src="icon/8.png" style="height:20px; width:30px"></img>
-                                </td>
-                                <td name="s802" class="active-cell s802">10</td>
-                                <td name="s803" class="active-cell s803">14</td>
-                                <td name="s804" class="active-cell s804">1</td>
-                                <td name="s805" class="active-cell s805">7</td>
-                                <td name="s806" class="active-cell s806">6</td>
-                                <td name="s807" class="active-cell s807">8</td>
-                                <td name="s808" class="active-cell s808">6</td>
-                                <td name="s809" class="active-cell s809">20</td>
-                                <td name="s810" class="active-cell s810"></td>
-                                <td name="s811" class="active-cell s811">9</td>
-                                <td name="s812" class="active-cell s812"></td>
-                                <td name="s813" class="active-cell s813">1</td>
-                                <td name="s814" class="active-cell s814">16</td>
-                                <td name="s815" class="active-cell s815">3</td>
-                                <td name="s816" class="active-cell s816">1</td>
-                                <td name="s817" class="active-cell s817"></td>
-                                <td name="s818" class="active-cell s818">7</td>
-                                <!-- <td name="s819" class="active-cell s819">3</td>
-                                <td name="s820" class="active-cell s820">2</td>
-                                <td name="s821" class="active-cell s821">4</td> -->
-                            </tr>
-
-                            <tr>
-                                <td class="heavy-left"><b>shocked</b></td>
-                                <td class="heavy-left"><b name="s9Sum">10</b></td>
-                                <td name="s901" class="active-cell s901"><img src="icon/9.png" style="height:20px; width:30px"></img>
-                                </td>
-                                <td name="s902" class="active-cell s902">3</td>
-                                <td name="s903" class="active-cell s903">3</td>
-                                <td name="s904" class="active-cell s904">1</td>
-                                <td name="s905" class="active-cell s905">1</td>
-                                <td name="s906" class="active-cell s906">3</td>
-                                <td name="s907" class="active-cell s907">2</td>
-                                <td name="s908" class="active-cell s908"></td>
-                                <td name="s909" class="active-cell s909">6</td>
-                                <td name="s910" class="active-cell s910"></td>
-                                <td name="s911" class="active-cell s911">2</td>
-                                <td name="s912" class="active-cell s912">1</td>
-                                <td name="s913" class="active-cell s913"></td>
-                                <td name="s914" class="active-cell s914">5</td>
-                                <td name="s915" class="active-cell s915">2</td>
-                                <td name="s916" class="active-cell s916"></td>
-                                <td name="s917" class="active-cell s917"></td>
-                                <td name="s918" class="active-cell s918"></td>
-                                <!-- <td name="s919" class="active-cell s919">0</td>
-                                <td name="s920" class="active-cell s920">0</td>
-                                <td name="s921" class="active-cell s921">0</td> -->
-                            </tr>
-
-
-
-
-
-
-
-                            <tbody>
-                </table>
-
-                <!-- <p style="text-align: center;font-size: 10px;">Copyright©2020 Intelligent Big Data Visualization Lab, Tongji University ,Shanghai, China</p> -->
-
-
-            </div>
-
-        </div>
-
-
-        <!-- detail infoG -->
-
-        <div class="container-fluid" id="cue-overlay-container">
-
-            <!-- 弹出页构建 -->
-            <button class='glyphicon-close'>
-				<img src="icon/close.png"  height="10" width="10" style="margin-left: -3px;"/>
-			</button>
-
-
-            <div class="container-img" id="water-fall-container">
-                <!--<div class="imgShow"><a href="images/temp_img02.jpg"><img src="images/temp_img02.jpg" width="380px"/></a></div>
-	<div class="imgShow"><a href="images/temp_img03.jpg"><img src="images/temp_img03.jpg" width="380px"/></a></div>
-	<div class="imgShow"><a href="images/temp_img04.jpg"><img src="images/temp_img04.jpg" width="380px"/></a></div>
-	<div class="imgShow"><a href="images/temp_img05.jpg"><img src="images/temp_img05.jpg" width="380px"/></a></div>
-	<div class="imgShow"><a href="images/temp_img06.jpg"><img src="images/temp_img06.jpg" width="380px"/></a></div>
-	<div class="imgShow"><a href="images/temp_img07.jpg"><img src="images/temp_img07.jpg" width="380px"/></a></div>
-	<div class="imgShow"><a href="images/temp_img08.jpg"><img src="images/temp_img08.jpg" width="380px"/></a></div>
-	<div class="imgShow"><a href="images/temp_img09.jpg"><img src="images/temp_img09.jpg" width="380px"/></a></div>
-	<div class="imgShow"><a href="images/temp_img10.jpg"><img src="images/temp_img10.jpg" width="380px"/></a></div>
-	<div class="imgShow"><a href="images/temp_img11.jpg"><img src="images/temp_img11.jpg" width="380px"/></a></div>
-	<div class="imgShow"><a href="images/temp_img12.jpg"><img src="images/temp_img12.jpg" width="380px"/></a></div>
-	<div class="imgShow"><a href="images/temp_img13.jpg"><img src="images/temp_img13.jpg" width="380px"/></a></div>
-	<div class="imgShow"><a href="images/temp_img14.jpg"><img src="images/temp_img14.jpg" width="380px"/></a></div>
-	<div class="imgShow"><a href="images/temp_img15.jpg"><img src="images/temp_img15.jpg" width="380px"/></a></div>
-	 -->
-            </div>
-        </div>
+        <table class="tg" style="margin-left: 11%">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th class="verticalTableHeader"><span>Happy</span></th>
+                    <th class="verticalTableHeader"><span>surprised</span></th>
+                    <th class="verticalTableHeader"><span>excited</span></th>
+                    <th class="verticalTableHeader"><span>content</span></th>
+                    <th class="verticalTableHeader"><span>awestruck</span></th>
+                    <th class="verticalTableHeader"><span>hopeful</span></th>
+                    <th class="verticalTableHeader"><span>sad</span></th>
+                    <th class="verticalTableHeader"><span>concerned</span></th>
+                    <th class="verticalTableHeader"><span>shocked</span></th>
+                    <th class="verticalTableHeader"><span>bored</span></th>
+                    <th class="verticalTableHeader"><span>overwhelmed</span></th>
+                    <th class="verticalTableHeader"><span>annoyed</span></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td rowspan="11">H1<br>Usability</td>
+                    <td rowspan="3">H1-1<br>Accessibility</td>
+                    <td> H1-1-1 The&nbsp;&nbsp;&nbsp;infographic uses comprehensible data encodings</td>
+                    <td>3</td>
+                    <td>　</td>
+                    <td>1</td>
+                    <td>8</td>
+                    <td>1</td>
+                    <td>　</td>
+                    <td>　</td>
+                    <td>1</td>
+                    <td>　</td>
+                    <td>-2</td>
+                    <td>-8</td>
+                    <td>-3</td>
+                </tr>
+                <tr>
+                    <td> H1-1-2 The infographic provides an appropriate amount of information</td>
+                    <td>1</td>
+                    <td>　</td>
+                    <td>　</td>
+                    <td>2</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>　</td>
+                    <td>　</td>
+                    <td>　</td>
+                    <td>-11</td>
+                    <td>-31</td>
+                    <td>-4</td>
+                </tr>
+                <tr>
+                    <td> H1-1-3 The infographic provides a clear reading path</td>
+                    <td>8</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>6</td>
+                    <td>　</td>
+                    <td>　</td>
+                    <td>　</td>
+                    <td>　</td>
+                    <td>　</td>
+                    <td>-3</td>
+                    <td>-5</td>
+                    <td>-4</td>
+                </tr>
+                <tr>
+                    <td rowspan="3">H1-2<br>Readability<br></td>
+                    <td> H1-2-1 The infographic uses readable font size</td>
+                    <td>1</td>
+                    <td>　</td>
+                    <td>　</td>
+                    <td>　</td>
+                    <td>　</td>
+                    <td>　</td>
+                    <td>　</td>
+                    <td>　</td>
+                    <td>　</td>
+                    <td>-4</td>
+                    <td>-7</td>
+                    <td>-6</td>
+                </tr>
+                <tr>
+                    <td> H1-2-2 The infographic's graphics and texts stand out from the&nbsp;&nbsp;&nbsp;background</td>
+                    <td>1</td>
+                    <td>　</td>
+                    <td>　</td>
+                    <td>2</td>
+                    <td>　</td>
+                    <td>　</td>
+                    <td>　</td>
+                    <td>　</td>
+                    <td>　</td>
+                    <td>-1</td>
+                    <td>　</td>
+                    <td>　</td>
+                </tr>
+                <tr>
+                    <td> H1-2-3 The infographic has no spelling or grammar errors</td>
+                    <td>　</td>
+                    <td>　</td>
+                    <td>　</td>
+                    <td>　</td>
+                    <td>　</td>
+                    <td>　</td>
+                    <td>　</td>
+                    <td>　</td>
+                    <td>　</td>
+                    <td>-1</td>
+                    <td>　</td>
+                    <td>　</td>
+                </tr>
+                <tr>
+                    <td rowspan="3">H1-3<br>Messaging</td>
+                    <td> H1-3-1 The infographic provides clear labels and legends for data&nbsp;&nbsp;&nbsp;visualization</td>
+                    <td>2</td>
+                    <td>　</td>
+                    <td>　</td>
+                    <td>　</td>
+                    <td>　</td>
+                    <td>　</td>
+                    <td>　</td>
+                    <td>　</td>
+                    <td>　</td>
+                    <td>-1</td>
+                    <td>-1</td>
+                    <td>-1</td>
+                </tr>
+                <tr>
+                    <td> H1-3-2 The infographic provides contextual information for data&nbsp;&nbsp;&nbsp;visualization</td>
+                    <td>　</td>
+                    <td>　</td>
+                    <td>　</td>
+                    <td>　</td>
+                    <td>　</td>
+                    <td>　</td>
+                    <td>　</td>
+                    <td>　</td>
+                    <td>　</td>
+                    <td>-5</td>
+                    <td>-2</td>
+                    <td>-1</td>
+                </tr>
+                <tr>
+                    <td> H1-3-3 The infographic provides detailed explanation for data&nbsp;&nbsp;&nbsp;visualization</td>
+                    <td>5</td>
+                    <td>　</td>
+                    <td>1</td>
+                    <td>4</td>
+                    <td>　</td>
+                    <td>　</td>
+                    <td>-1</td>
+                    <td>　</td>
+                    <td>　</td>
+                    <td>-2</td>
+                    <td>-3</td>
+                    <td>　</td>
+                </tr>
+                <tr>
+                    <td rowspan="2">H1-4<br>Credibility</td>
+                    <td> H1-4-1 The infographic presents information in an impartial way</td>
+                    <td>　</td>
+                    <td>　</td>
+                    <td>　</td>
+                    <td>　</td>
+                    <td>　</td>
+                    <td>　</td>
+                    <td>　</td>
+                    <td>　</td>
+                    <td>　</td>
+                    <td>　</td>
+                    <td>　</td>
+                    <td>-2</td>
+                </tr>
+                <tr>
+                    <td> H1-4-2 The infographic uses data that is valid and clearly collated</td>
+                    <td>1</td>
+                    <td>　</td>
+                    <td>　</td>
+                    <td>　</td>
+                    <td>　</td>
+                    <td>　</td>
+                    <td>　</td>
+                    <td>　</td>
+                    <td>　</td>
+                    <td>　</td>
+                    <td>　</td>
+                    <td>-2</td>
+                </tr>
+                <tr>
+                    <td rowspan="11">H2<br>Expressivess</td>
+                    <td rowspan="6">H2-1<br>Embodiment</td>
+                    <td> H2-1-1 The&nbsp;&nbsp;&nbsp;infographic incorporates topic-relevant imagery into visualization</td>
+                    <td>4</td>
+                    <td>1</td>
+                    <td>　</td>
+                    <td>2</td>
+                    <td>2</td>
+                    <td>　</td>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>　</td>
+                    <td>-1</td>
+                    <td>　</td>
+                    <td>　</td>
+                </tr>
+                <tr>
+                    <td> H2-1-2 The&nbsp;&nbsp;&nbsp;infographic uses topic-relevant imagery as embellishment</td>
+                    <td>7</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>3</td>
+                    <td>　</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>3</td>
+                    <td>1</td>
+                    <td>　</td>
+                    <td>-1</td>
+                    <td>　</td>
+                </tr>
+                <tr>
+                    <td> H2-1-3 The infographic uses bright/dark color for positive/negative tone</td>
+                    <td>2</td>
+                    <td>　</td>
+                    <td>　</td>
+                    <td>　</td>
+                    <td>　</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>　</td>
+                    <td>　</td>
+                    <td>　</td>
+                    <td>　</td>
+                </tr>
+                <tr>
+                    <td> H2-1-4 The infographic uses warm/cold color for positive/negative tone</td>
+                    <td>2</td>
+                    <td>　</td>
+                    <td>　</td>
+                    <td>　</td>
+                    <td>　</td>
+                    <td>　</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>　</td>
+                    <td>　</td>
+                    <td>　</td>
+                    <td>　</td>
+                </tr>
+                <tr>
+                    <td> H2-1-5 The infographic is of high/low colorfulness for&nbsp;&nbsp;&nbsp;positive/negative tone</td>
+                    <td>6</td>
+                    <td>　</td>
+                    <td>3</td>
+                    <td>2</td>
+                    <td>　</td>
+                    <td>1</td>
+                    <td>　</td>
+                    <td>　</td>
+                    <td>　</td>
+                    <td>-4</td>
+                    <td>-2</td>
+                    <td>　</td>
+                </tr>
+                <tr>
+                    <td> H2-1-6 The infographic uses semantically-resonate colors</td>
+                    <td>2</td>
+                    <td>1</td>
+                    <td>　</td>
+                    <td>1</td>
+                    <td>　</td>
+                    <td>　</td>
+                    <td>1</td>
+                    <td>　</td>
+                    <td>2</td>
+                    <td>　</td>
+                    <td>　</td>
+                    <td>-1</td>
+                </tr>
+                <tr>
+                    <td rowspan="3">H2-2 <br>Narrative</td>
+                    <td> H2-3-1 The infographic highlights key data facts</td>
+                    <td>2</td>
+                    <td>11</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>1</td>
+                    <td>7</td>
+                    <td>4</td>
+                    <td>3</td>
+                    <td>　</td>
+                    <td>1</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td> H2-3-2 The infographic addresses the audience directly</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>　</td>
+                    <td>　</td>
+                    <td>　</td>
+                    <td>　</td>
+                    <td>　</td>
+                    <td>　</td>
+                    <td>　</td>
+                    <td>-1</td>
+                    <td>　</td>
+                    <td>-1</td>
+                </tr>
+                <tr>
+                    <td> H2-3-3 The infographic uses strong wording</td>
+                    <td>2</td>
+                    <td>　</td>
+                    <td>　</td>
+                    <td>1</td>
+                    <td>　</td>
+                    <td>　</td>
+                    <td>　</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>　</td>
+                    <td>　</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td rowspan="2">H2-3<br>Uniqueness</td>
+                    <td> H2-2-3 The infographic uses novel data visualization</td>
+                    <td>7</td>
+                    <td>　</td>
+                    <td>　</td>
+                    <td>1</td>
+                    <td>4</td>
+                    <td>　</td>
+                    <td>　</td>
+                    <td>　</td>
+                    <td>　</td>
+                    <td>-2</td>
+                    <td>　</td>
+                    <td>　</td>
+                </tr>
+                <tr>
+                    <td> H2-2-4 The infographic has a salient style or personality</td>
+                    <td>1</td>
+                    <td>　</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>　</td>
+                    <td>　</td>
+                    <td>　</td>
+                    <td>　</td>
+                    <td>　</td>
+                    <td>　</td>
+                    <td>　</td>
+                    <td>　</td>
+                </tr>
+            </tbody>
+        </table>
 
 
     </div>
@@ -618,24 +534,6 @@
 
         // sleep(1000); // 延时函数，单位ms
 
-
-        //=====================功能===============瀑布流
-        document.getElementsByClassName = function(className, tag, elm) {
-            var testClass = new RegExp("(^|\s)" + className + "(\s|$)");
-            var tag = tag || "*";
-            var elm = elm || document;
-            var elements = (tag == "*" && elm.all) ? elm.all : elm.getElementsByTagName(tag);
-            var returnElements = [];
-            var current;
-            var length = elements.length;
-            for (var i = 0; i < length; i++) {
-                current = elements[i];
-                if (testClass.test(current.className)) {
-                    returnElements.push(current);
-                }
-            }
-            return returnElements;
-        }
 
 
         function show() {
@@ -906,75 +804,6 @@
         };
 
 
-        function addWaterfall(table, Fall) {
-            //清空
-            Fall.innerHTML = "";
-
-            for (var i = 0; i < idl; i++) {
-                //循环添加瀑布流中图片
-                var div_img = document.createElement('div');
-                div_img.className = "imgShow";
-
-                var a_img = document.createElement('a');
-                a_img.href = "https://infographics-test.s3-us-west-1.amazonaws.com/" + table[i].link.slice(4);
-
-
-                var img = document.createElement('img');
-
-                img.src = table[i].link; //本地资源
-
-                //测试单张图片
-                // img.src = "src/pic1.png";
-
-                img.width = 380;
-                Fall.appendChild(div_img);
-                div_img.appendChild(a_img);
-                a_img.appendChild(img);
-
-
-                //添加图片上的标记
-                //console.log(table[i].index,skill)
-                var currentTag = [];
-                for (var t = 0; t < tags.length; t++) {
-                    if (tags[t].index == table[i].index) {
-                        var tagName = "tag" + skill.slice(2, 4);
-                        //console.log(tagName,tags[t][tagName])
-                        currentTag = tags[t][tagName];
-                    }
-
-                }
-
-                var a_tag = document.createElement('span');
-                a_tag.className = "taglabels";
-                a_tag.href = "#";
-                a_tag.style.left = currentTag[0];
-                a_tag.style.top = currentTag[1];
-                a_tag.innerHTML = currentTag[2];
-                // debugger;
-                if (typeof(currentTag[2]) == "undefined") {
-                    a_tag.style.display = "none";
-                } else {
-                    a_tag.style.width = currentTag[2].length * 5 + 90;
-                }
-
-                // var a_span = document.createElement('span');
-                // a_span.className = "taglabels_span";
-
-                div_img.appendChild(a_tag);
-                // a_tag.appendChild(a_span);
-
-
-            }
-
-
-
-
-        }
-
-        //addContent(table);//初始化 addcontent
-
-
-
 
 
 
@@ -1012,80 +841,6 @@
 
 
 
-
-    <script>
-        //===============================功能：切换主题色
-
-        //title色*2，按钮高亮色，边框色和填充色
-        var colorset = [
-            ["happy", 'rgba(242, 179, 158,', "#F2B39E", "happy-1.png"],
-            ["surprised", 'rgba(42, 148, 194,', "#2A94C2", "surprised-1.png"], //wait
-            ["excited", 'rgba(230, 54, 46,', "#E6362E", "excited-1.png"],
-            ["content", 'rgba(98, 195, 218,', "#62C3DA", "content-1.png"],
-            ["awestruck", 'rgba(49, 53, 58,', "#31353A", "virus.png"], //?
-            ["hopeful", 'rgba(154, 204, 109,', "#9ACC6D", "hopeful-1.png"],
-            ["sad", 'rgba(40, 52, 74,', "#28344A", "sad-1.png"],
-            ["concerned", 'rgba(66, 62, 60,', "#423E3C", "virus.png"], //
-            ["shocked", 'rgba(153, 17, 16,', "#991110", "virus.png"], //wait
-            ["happy", 'rgba(168, 212, 232,', "#A8D4E8", "happy-2.png"],
-            ["surprised", 'rgba(222, 173, 34,', "#DDAD23", "surprised-2.png"], //wait
-            ["excited", 'rgba(235, 92, 54,', "#EB5C36", "excited-2.png"],
-            ["content", 'rgba(222, 194, 152,', "#DEC298", "content-2.png"],
-            ["awestruck", 'rgba(47, 78, 103,', "#2F4E67", "awestruck-2.png"],
-            ["hopeful", 'rgba(112, 193, 207,', "#70C1CF", "hopeful-2.png"],
-            ["sad", 'rgba(127, 139, 137,', "#7F8B89", "sad-2.png"],
-            ["concerned", 'rgba(161, 180, 169,', "#E69C38", "horror.png"],
-            ["shocked", 'rgba(179, 74, 78,', "#B34A4E", "shocked-2.png"],
-        ]
-
-
-        function changeColor() {
-
-            var maxC = colorset.length;
-            var changeC = Math.ceil(Math.random() * maxC);
-            //console.log(changeC,colorset[changeC-1][0])
-
-            document.getElementById("maskColor").style.background = colorset[changeC - 1][2];
-
-            for (var j = 0; j < document.getElementsByClassName("heavy-bottom-2 dimblue").length; j++) {
-                document.getElementsByClassName("heavy-bottom-2 dimblue")[j].style.background = colorset[changeC - 1][2];
-            }
-
-            // //border
-            // for(var m= 0;m<document.getElementsByClassName("heavy-left").length;m++){
-            // 	document.getElementsByClassName("heavy-left")[m].style.border="1px solid "+colorset[changeC-1][1];
-            // }
-
-            // 	for (var i=1; i<=21; i++){ //表格属性数
-            //     var siN = i<10?document.getElementsByName("si0"+i)[0]:document.getElementsByName("si"+i)[0];
-            // 	siN.style.border="1px solid "+colorset[changeC-1][3];
-            // }
-
-            // for (var i = 1; i <= 9; i++) { //表格属性数
-            //     for (var j = 1; j <= 21; j++) {
-            //         var sN = j < 10 ? document.getElementsByName("s" + i + "0" + j)[0] : document.getElementsByName("s" + i + j)[0];
-            //         //sN.style.border="1px solid "+colorset[changeC-1][3];
-            //         sN.style.background = colorset[changeC - 1][1];
-            //     }
-            // }
-            setHeatmap(colorset[changeC - 1][1])
-                // debugger;
-            document.getElementById("symbols").src = colorset[changeC - 1][3];
-
-
-
-
-            //text
-
-            var tN = document.getElementById("colorset_Name");
-            //sN.style.border="1px solid "+colorset[changeC-1][3];
-            tN.innerText = colorset[changeC - 1][0];
-
-
-
-
-        }
-    </script>
 
     <script type="text/javascript">
         //echarts
