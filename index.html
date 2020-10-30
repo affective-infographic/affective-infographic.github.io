@@ -35,8 +35,8 @@
         <div class="divFloat" style="font-size: 14px; line-height: 1.2;">
             <img id="example_pic" src="" height="380px"></img>
             <p></p>
-            <p id="example_pic_author"></p>
-            <p id="example_pic_link"></p>
+            <p id="example_pic_title"></p>
+            <p><strong>Link: </strong><a id="example_pic_link" href="">go to the source</a></p>
             <p id="example_pic_comment"></p>
             <br>
             <input type="button" id="btClose" class="btClose" value="Close (x)" />
@@ -467,12 +467,13 @@
     <script type="text/javascript ">
         function seeExp(clicked_id) {
             console.log(clicked_id)
-            example_info =
-                document.getElementById('example').style.display = "block";
+            example_info = document.getElementById('example').style.display = "block";
             document.getElementById('example_pic').src = "./examples/" + examples[clicked_id]['src']
             document.getElementById('example_pic_comment').innerHTML = "<strong>Comment: </strong>" + '"' + examples[clicked_id]['comment'] + '"'
-            document.getElementById('example_pic_author').innerHTML = "<strong>Author: </strong>" + examples[clicked_id]['author']
-            document.getElementById('example_pic_link').innerHTML = "<strong>Link: </strong>" + examples[clicked_id]['link']
+            document.getElementById('example_pic_title').innerHTML = "<strong>Title: </strong>" + examples[clicked_id]['title']
+            document.getElementById('example_pic_link').href = examples[clicked_id]['link']
+            document.getElementById('example_pic_link').innerHTML = examples[clicked_id]['link']
+
         }
     </script>
 
