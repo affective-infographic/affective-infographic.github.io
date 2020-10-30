@@ -3,7 +3,7 @@
 <head>
 
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <title>EmoVis Project</title>
+    <title>Affective Design Project</title>
 
     <script type="text/javascript" src="examples.js"></script>
     <script type="text/javascript" src="libs/d3.v4.min.js"></script>
@@ -32,12 +32,16 @@
     </div>
 
     <div id="example" style="display:none;">
-        <div class="divFloat">
-            <img id="example_pic" src="" height="400px"></img>
-            <p>Author: xxx</p>
-            <p>Link: xxx</p>
-            <p>Why: xxx</p>
-            <input type="button" id="btClose" class="btClose" value="Close (x)" /> </div>
+        <div class="divFloat" style="font-size: 14px; line-height: 1.2;">
+            <img id="example_pic" src="" height="380px"></img>
+            <p></p>
+            <p id="example_pic_author"></p>
+            <p id="example_pic_link"></p>
+            <p id="example_pic_comment"></p>
+            <br>
+            <input type="button" id="btClose" class="btClose" value="Close (x)" />
+            <br>
+        </div>
     </div>
 
     <div style="display: none;" id="con_one_2">
@@ -50,7 +54,7 @@
     </div>
     <div style="margin-top: 100px; margin-bottom: 100px; margin-left: 10%; display: block;" id="con_one_1">
         <p style="font-size: 26px; font-weight: bold;text-align: center;">Design Heuristics for Affect-Related Factors in Infographics</p>
-        <p style="font-size: 16px; color: gray;text-align: center;">*Click on heuristics to see examples</p>
+        <p style="font-size: 16px; color: gray;text-align: center;">*Green = frequency of being adhered to; Orange = frequency of being violeted. You can click on heuristics to see examples.</p>
         <table class="tg" style="margin-top: 50px">
             <thead>
                 <tr>
@@ -73,9 +77,9 @@
             </thead>
             <tbody>
                 <tr>
-                    <td style="text-align: center; " rowspan="11 ">H1<br>Usability</td>
-                    <td style="text-align: center; " rowspan="3 ">H1-1<br>Accessibility</td>
-                    <td id="H1-1-1" onclick="seeExp(this.id)"> H1-1-1 The infographic uses comprehensible data encodings</td>
+                    <td style="text-align: center; " rowspan="11 "><strong>H1</strong><br>Usability</td>
+                    <td style="text-align: center; " rowspan="3 "><strong>H1-1</strong><br>Accessibility</td>
+                    <td id="H1-1-1" onclick="seeExp(this.id)"><strong>H1-1-1</strong> The infographic uses comprehensible data encodings</td>
                     <td class="heatmap">3</td>
                     <td class="heatmap">　</td>
                     <td class="heatmap">1</td>
@@ -90,7 +94,7 @@
                     <td class="heatmap">-3</td>
                 </tr>
                 <tr>
-                    <td id="H1-1-2" onclick="seeExp(this.id)"> H1-1-2 The infographic provides an appropriate amount of information</td>
+                    <td id="H1-1-2" onclick="seeExp(this.id)"><strong>H1-1-2</strong> The infographic provides an appropriate amount of information</td>
                     <td class="heatmap">1</td>
                     <td>　</td>
                     <td>　</td>
@@ -105,7 +109,7 @@
                     <td class="heatmap">-4</td>
                 </tr>
                 <tr>
-                    <td id="H1-1-3" onclick="seeExp(this.id)"> H1-1-3 The infographic provides a clear reading path</td>
+                    <td id="H1-1-3" onclick="seeExp(this.id)"><strong>H1-1-3</strong> The infographic provides a clear reading path</td>
                     <td class="heatmap">8</td>
                     <td class="heatmap">1</td>
                     <td class="heatmap">1</td>
@@ -120,8 +124,8 @@
                     <td class="heatmap">-4</td>
                 </tr>
                 <tr>
-                    <td style="text-align: center; " rowspan="3 ">H1-2<br>Readability<br></td>
-                    <td id="H1-2-1" onclick="seeExp(this.id)"> H1-2-1 The infographic uses readable font size</td>
+                    <td style="text-align: center; " rowspan="3 "><strong>H1-2</strong><br>Readability<br></td>
+                    <td id="H1-2-1" onclick="seeExp(this.id)"> <strong>H1-2-1</strong> The infographic uses readable font size</td>
                     <td class="heatmap">1</td>
                     <td>　</td>
                     <td>　</td>
@@ -136,7 +140,7 @@
                     <td class="heatmap">-6</td>
                 </tr>
                 <tr>
-                    <td id="H1-2-2" onclick="seeExp(this.id)"> H1-2-2 The infographic's graphics and texts stand out from the background</td>
+                    <td id="H1-2-2" onclick="seeExp(this.id)"> <strong>H1-2-2</strong> The infographic's graphics and texts stand out from the background</td>
                     <td class="heatmap">1</td>
                     <td>　</td>
                     <td>　</td>
@@ -151,7 +155,7 @@
                     <td>　</td>
                 </tr>
                 <tr>
-                    <td id="H1-2-3" onclick="seeExp(this.id)"> H1-2-3 The infographic has no spelling or grammar errors</td>
+                    <td id="H1-2-3" onclick="seeExp(this.id)"> <strong>H1-2-3</strong> The infographic has no spelling or grammar errors</td>
                     <td>　</td>
                     <td>　</td>
                     <td>　</td>
@@ -166,8 +170,8 @@
                     <td>　</td>
                 </tr>
                 <tr>
-                    <td style="text-align: center; " rowspan="3 ">H1-3<br>Messaging</td>
-                    <td id="H1-3-1" onclick="seeExp(this.id)"> H1-3-1 The infographic provides clear labels and legends for data visualization</td>
+                    <td style="text-align: center; " rowspan="3 "><strong>H1-3</strong><br>Messaging</td>
+                    <td id="H1-3-1" onclick="seeExp(this.id)"> <strong>H1-3-1</strong> The infographic provides clear labels and legends for data visualization</td>
                     <td class="heatmap">2</td>
                     <td>　</td>
                     <td>　</td>
@@ -182,7 +186,7 @@
                     <td class="heatmap">-1</td>
                 </tr>
                 <tr>
-                    <td id="H1-3-2" onclick="seeExp(this.id)"> H1-3-2 The infographic provides contextual information for data visualization</td>
+                    <td id="H1-3-2" onclick="seeExp(this.id)"> <strong>H1-3-2</strong> The infographic provides contextual information for data visualization</td>
                     <td>　</td>
                     <td>　</td>
                     <td>　</td>
@@ -197,7 +201,7 @@
                     <td class="heatmap">-1</td>
                 </tr>
                 <tr>
-                    <td id="H1-3-3" onclick="seeExp(this.id)"> H1-3-3 The infographic provides detailed explanation for data visualization</td>
+                    <td id="H1-3-3" onclick="seeExp(this.id)"> <strong>H1-3-3</strong> The infographic provides detailed explanation for data visualization</td>
                     <td class="heatmap">5</td>
                     <td>　</td>
                     <td class="heatmap">1</td>
@@ -212,8 +216,8 @@
                     <td>　</td>
                 </tr>
                 <tr>
-                    <td style="text-align: center; " rowspan="2 ">H1-4<br>Credibility</td>
-                    <td id="H1-4-1" onclick="seeExp(this.id)"> H1-4-1 The infographic presents information in an impartial way</td>
+                    <td style="text-align: center; " rowspan="2 "><strong>H1-4</strong><br>Credibility</td>
+                    <td id="H1-4-1" onclick="seeExp(this.id)"> <strong>H1-4-1</strong> The infographic presents information in an impartial way</td>
                     <td>　</td>
                     <td>　</td>
                     <td>　</td>
@@ -228,7 +232,7 @@
                     <td class="heatmap">-2</td>
                 </tr>
                 <tr>
-                    <td id="H1-4-2" onclick="seeExp(this.id)"> H1-4-2 The infographic uses data that is valid and clearly collated</td>
+                    <td id="H1-4-2" onclick="seeExp(this.id)"> <strong>H1-4-2</strong> The infographic uses data that is valid and clearly collated</td>
                     <td class="heatmap">1</td>
                     <td>　</td>
                     <td>　</td>
@@ -243,9 +247,9 @@
                     <td class="heatmap">-2</td>
                 </tr>
                 <tr>
-                    <td style="text-align: center; " rowspan="11 ">H2<br>Expressivess</td>
-                    <td style="text-align: center; " rowspan="6 ">H2-1<br>Embodiment</td>
-                    <td id="H2-1-1" onclick="seeExp(this.id)"> H2-1-1 The infographic incorporates topic-relevant imagery into visualization</td>
+                    <td style="text-align: center; " rowspan="11 "><strong>H2</strong><br>Expressivess</td>
+                    <td style="text-align: center; " rowspan="6 "><strong>H2-1</strong><br>Embodiment</td>
+                    <td id="H2-1-1" onclick="seeExp(this.id)"> <strong>H2-1-1</strong> The infographic incorporates topic-relevant imagery into visualization</td>
                     <td class="heatmap">4</td>
                     <td class="heatmap">1</td>
                     <td>　</td>
@@ -260,7 +264,7 @@
                     <td>　</td>
                 </tr>
                 <tr>
-                    <td id="H2-1-2" onclick="seeExp(this.id)"> H2-1-2 The infographic uses topic-relevant imagery as embellishment</td>
+                    <td id="H2-1-2" onclick="seeExp(this.id)"> <strong>H2-1-2</strong> The infographic uses topic-relevant imagery as embellishment</td>
                     <td class="heatmap">7</td>
                     <td class="heatmap">1</td>
                     <td class="heatmap">1</td>
@@ -275,7 +279,7 @@
                     <td>　</td>
                 </tr>
                 <tr>
-                    <td id="H2-1-3" onclick="seeExp(this.id)"> H2-1-3 The infographic uses bright/dark color for positive/negative tone</td>
+                    <td id="H2-1-3" onclick="seeExp(this.id)"> <strong>H2-1-3</strong> The infographic uses bright/dark color for positive/negative tone</td>
                     <td class="heatmap">2</td>
                     <td>　</td>
                     <td>　</td>
@@ -290,7 +294,7 @@
                     <td>　</td>
                 </tr>
                 <tr>
-                    <td id="H2-1-4" onclick="seeExp(this.id)"> H2-1-4 The infographic uses warm/cold color for positive/negative tone</td>
+                    <td id="H2-1-4" onclick="seeExp(this.id)"> <strong>H2-1-4</strong> The infographic uses warm/cold color for positive/negative tone</td>
                     <td class="heatmap">2</td>
                     <td>　</td>
                     <td>　</td>
@@ -305,7 +309,7 @@
                     <td>　</td>
                 </tr>
                 <tr>
-                    <td id="H2-1-5" onclick="seeExp(this.id)"> H2-1-5 The infographic is of high/low colorfulness for&nbsp;&nbsp;&nbsp;positive/negative tone</td>
+                    <td id="H2-1-5" onclick="seeExp(this.id)"> <strong>H2-1-5</strong> The infographic is of high/low colorfulness for positive/negative tone</td>
                     <td class="heatmap">6</td>
                     <td>　</td>
                     <td class="heatmap">3</td>
@@ -320,7 +324,7 @@
                     <td>　</td>
                 </tr>
                 <tr>
-                    <td id="H2-1-6" onclick="seeExp(this.id)"> H2-1-6 The infographic uses semantically-resonate colors</td>
+                    <td id="H2-1-6" onclick="seeExp(this.id)"> <strong>H2-1-6</strong> The infographic uses semantically-resonate colors</td>
                     <td class="heatmap">2</td>
                     <td class="heatmap">1</td>
                     <td>　</td>
@@ -335,8 +339,8 @@
                     <td class="heatmap">-1</td>
                 </tr>
                 <tr>
-                    <td style="text-align: center; " rowspan="3 ">H2-2 <br>Narrative</td>
-                    <td id="H2-2-1" onclick="seeExp(this.id)"> H2-2-1 The infographic highlights key data facts</td>
+                    <td style="text-align: center; " rowspan="3 "><strong>H2-2</strong> <br>Narrative</td>
+                    <td id="H2-2-1" onclick="seeExp(this.id)"> <strong>H2-2-1</strong> The infographic highlights key data facts</td>
                     <td class="heatmap">2</td>
                     <td class="heatmap">11</td>
                     <td class="heatmap">1</td>
@@ -351,7 +355,7 @@
                     <td class="heatmap">1</td>
                 </tr>
                 <tr>
-                    <td id="H2-2-2" onclick="seeExp(this.id)"> H2-2-2 The infographic addresses the audience directly</td>
+                    <td id="H2-2-2" onclick="seeExp(this.id)"> <strong>H2-2-2</strong> The infographic addresses the audience directly</td>
                     <td class="heatmap">1</td>
                     <td class="heatmap">1</td>
                     <td>　</td>
@@ -366,7 +370,7 @@
                     <td class="heatmap">-1</td>
                 </tr>
                 <tr>
-                    <td id="H2-2-3" onclick="seeExp(this.id)"> H2-2-3 The infographic uses strong wording</td>
+                    <td id="H2-2-3" onclick="seeExp(this.id)"> <strong>H2-2-3</strong> The infographic uses strong wording</td>
                     <td class="heatmap">2</td>
                     <td>　</td>
                     <td>　</td>
@@ -381,8 +385,8 @@
                     <td class="heatmap">1</td>
                 </tr>
                 <tr>
-                    <td style="text-align: center; " rowspan="2 ">H2-3<br>Uniqueness</td>
-                    <td id="H2-3-1" onclick="seeExp(this.id)"> H2-3-1 The infographic uses novel data visualization</td>
+                    <td style="text-align: center; " rowspan="2 "><strong>H2-3</strong><br>Uniqueness</td>
+                    <td id="H2-3-1" onclick="seeExp(this.id)"> <strong>H2-3-1</strong> The infographic uses novel data visualization</td>
                     <td class="heatmap">7</td>
                     <td>　</td>
                     <td>　</td>
@@ -397,7 +401,7 @@
                     <td>　</td>
                 </tr>
                 <tr>
-                    <td id="H2-3-2" onclick="seeExp(this.id)"> H2-3-2 The infographic has a salient style or personality</td>
+                    <td id="H2-3-2" onclick="seeExp(this.id)"> <strong>H2-3-2</strong> The infographic has a salient style or personality</td>
                     <td class="heatmap">1</td>
                     <td>　</td>
                     <td class="heatmap">1</td>
@@ -445,15 +449,18 @@
 
     <!-- draw function -->
     <script type="text/javascript ">
-        function setHeatmap(theme) {
+        function setHeatmap() {
             var cells = document.getElementsByClassName("heatmap")
             for (var i = 0; i < cells.length; i++) {
                 var value = cells[i].innerHTML;
-                cells[i].style.setProperty('background-color', theme + value / 16 + ')');
-
+                if (value > 0) {
+                    cells[i].style.setProperty('background-color', 'rgba(0, 176, 80,' + value / 16 + ')');
+                } else if (value < 0) {
+                    cells[i].style.setProperty('background-color', 'rgba(237, 125, 49,' + Math.abs(value) / 16 + ')');
+                }
             }
         }
-        setHeatmap('rgba(108, 155, 239,')
+        setHeatmap()
     </script>
 
 
@@ -462,7 +469,10 @@
             console.log(clicked_id)
             example_info =
                 document.getElementById('example').style.display = "block";
-            document.getElementById('example_pic').src = "./corpus/" + examples[clicked_id]['src']
+            document.getElementById('example_pic').src = "./examples/" + examples[clicked_id]['src']
+            document.getElementById('example_pic_comment').innerHTML = "<strong>Comment: </strong>" + '"' + examples[clicked_id]['comment'] + '"'
+            document.getElementById('example_pic_author').innerHTML = "<strong>Author: </strong>" + examples[clicked_id]['author']
+            document.getElementById('example_pic_link').innerHTML = "<strong>Link: </strong>" + examples[clicked_id]['link']
         }
     </script>
 
