@@ -5,7 +5,7 @@
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <title>EmoVis Project</title>
 
-
+    <script type="text/javascript" src="examples.js"></script>
     <script type="text/javascript" src="libs/d3.v4.min.js"></script>
     <script type="text/javascript" src="libs/echarts.min.js"></script>
     <script type="text/javascript" src="libs/echarts-gl.min.js"></script>
@@ -31,90 +31,95 @@
         <button class="tab_button_s" onclick="setTab('one',2,2)" id="one2">CA Space</button>
     </div>
 
+    <div id="example" style="display:none;">
+        <div class="divFloat">
+            <img id="example_pic" src="" width="400px" max-height="600px"></img>
+            <input type="button" id="btClose" class="btClose" value="Close (x)" /> </div>
+    </div>
+
     <div style="display: none;" id="con_one_2">
         <div id="scatter2D"></div>
         <div id="scatter3D" style="margin-top:50px"></div>
         <a class="DownButtonNormal" style="margin-left:40%;margin-top: 50px;margin-bottom: 50px;font-size:26px; font-weight:600; color: black;" name="DownLoadHistEvent" download="EmotionInfoG.csv" href="http://beijingair.sinaapp.com/data/beijing/all/20131205/csv">
-            😄 Download EmoVis <img src="icon/download.png" height="20px" width="20px" /> 
+            😄Request Dataset<img src="icon/download.png" height="20px" width="20px" /> 
         </a>
 
     </div>
-
-    <div id="con_one_1" style="display: block; clear: both; text-align:center;">
-        <p class="sub" style="margin-top: 120px;font-size:20px">Design Heuristics for Affect-Realted Factors in Infographics</p>
-
-        <table class="tg" style="margin-left: 11%">
+    <div style="margin-top: 100px; margin-bottom: 100px; margin-left: 10%; display: block;" id="con_one_1">
+        <p style="font-size: 26px; font-weight: bold;text-align: center;">Design Heuristics for Affect-Related Factors in Infographics</p>
+        <p style="font-size: 16px; color: gray;text-align: center;">*Hover or click to see explanations and examples</p>
+        <table class="tg" style="margin-top: 50px">
             <thead>
                 <tr>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                    <th class="verticalTableHeader"><span>Happy</span></th>
-                    <th class="verticalTableHeader"><span>surprised</span></th>
-                    <th class="verticalTableHeader"><span>excited</span></th>
-                    <th class="verticalTableHeader"><span>content</span></th>
-                    <th class="verticalTableHeader"><span>awestruck</span></th>
-                    <th class="verticalTableHeader"><span>hopeful</span></th>
-                    <th class="verticalTableHeader"><span>sad</span></th>
-                    <th class="verticalTableHeader"><span>concerned</span></th>
-                    <th class="verticalTableHeader"><span>shocked</span></th>
-                    <th class="verticalTableHeader"><span>bored</span></th>
-                    <th class="verticalTableHeader"><span>overwhelmed</span></th>
-                    <th class="verticalTableHeader"><span>annoyed</span></th>
+                    <th style="border-top: transparent; border-left: transparent; border-right: transparent; "></th>
+                    <th style="border-top: transparent; border-left: transparent; border-right: transparent; "></th>
+                    <th style="border-top: transparent; border-left: transparent; "></th>
+                    <th class="verticalTableHeader "><span>Happy</span></th>
+                    <th class="verticalTableHeader "><span>Surprised</span></th>
+                    <th class="verticalTableHeader "><span>Excited</span></th>
+                    <th class="verticalTableHeader "><span>Content</span></th>
+                    <th class="verticalTableHeader "><span>Awestruck</span></th>
+                    <th class="verticalTableHeader "><span>Hopeful</span></th>
+                    <th class="verticalTableHeader "><span>Sad</span></th>
+                    <th class="verticalTableHeader "><span>Concerned</span></th>
+                    <th class="verticalTableHeader "><span>Shocked</span></th>
+                    <th class="verticalTableHeader "><span>Bored</span></th>
+                    <th class="verticalTableHeader "><span>Overwhelmed</span></th>
+                    <th class="verticalTableHeader "><span>Annoyed</span></th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td rowspan="11">H1<br>Usability</td>
-                    <td rowspan="3">H1-1<br>Accessibility</td>
-                    <td> H1-1-1 The&nbsp;&nbsp;&nbsp;infographic uses comprehensible data encodings</td>
-                    <td>3</td>
-                    <td>　</td>
-                    <td>1</td>
-                    <td>8</td>
-                    <td>1</td>
-                    <td>　</td>
-                    <td>　</td>
-                    <td>1</td>
-                    <td>　</td>
-                    <td>-2</td>
-                    <td>-8</td>
-                    <td>-3</td>
+                    <td style="text-align: center; " rowspan="11 ">H1<br>Usability</td>
+                    <td style="text-align: center; " rowspan="3 ">H1-1<br>Accessibility</td>
+                    <td id="H1-1-1" onclick="seeExp(this.id)"> H1-1-1 The infographic uses comprehensible data encodings</td>
+                    <td class="heatmap">3</td>
+                    <td class="heatmap">　</td>
+                    <td class="heatmap">1</td>
+                    <td class="heatmap">8</td>
+                    <td class="heatmap">1</td>
+                    <td class="heatmap">　</td>
+                    <td class="heatmap">　</td>
+                    <td class="heatmap">1</td>
+                    <td class="heatmap">　</td>
+                    <td class="heatmap">-2</td>
+                    <td class="heatmap">-8</td>
+                    <td class="heatmap">-3</td>
                 </tr>
                 <tr>
-                    <td> H1-1-2 The infographic provides an appropriate amount of information</td>
-                    <td>1</td>
+                    <td id="H1-1-2" onclick="seeExp(this.id)"> H1-1-2 The infographic provides an appropriate amount of information</td>
+                    <td class="heatmap">1</td>
                     <td>　</td>
                     <td>　</td>
-                    <td>2</td>
-                    <td>1</td>
-                    <td>1</td>
+                    <td class="heatmap">2</td>
+                    <td class="heatmap">1</td>
+                    <td class="heatmap">1</td>
                     <td>　</td>
                     <td>　</td>
                     <td>　</td>
-                    <td>-11</td>
-                    <td>-31</td>
-                    <td>-4</td>
+                    <td class="heatmap">-11</td>
+                    <td class="heatmap">-31</td>
+                    <td class="heatmap">-4</td>
                 </tr>
                 <tr>
-                    <td> H1-1-3 The infographic provides a clear reading path</td>
-                    <td>8</td>
-                    <td>1</td>
-                    <td>1</td>
-                    <td>6</td>
+                    <td id="H1-1-3" onclick="seeExp(this.id)"> H1-1-3 The infographic provides a clear reading path</td>
+                    <td class="heatmap">8</td>
+                    <td class="heatmap">1</td>
+                    <td class="heatmap">1</td>
+                    <td class="heatmap">6</td>
                     <td>　</td>
                     <td>　</td>
                     <td>　</td>
                     <td>　</td>
                     <td>　</td>
-                    <td>-3</td>
-                    <td>-5</td>
-                    <td>-4</td>
+                    <td class="heatmap">-3</td>
+                    <td class="heatmap">-5</td>
+                    <td class="heatmap">-4</td>
                 </tr>
                 <tr>
-                    <td rowspan="3">H1-2<br>Readability<br></td>
-                    <td> H1-2-1 The infographic uses readable font size</td>
-                    <td>1</td>
+                    <td style="text-align: center; " rowspan="3 ">H1-2<br>Readability<br></td>
+                    <td id="H1-2-1" onclick="seeExp(this.id)"> H1-2-1 The infographic uses readable font size</td>
+                    <td class="heatmap">1</td>
                     <td>　</td>
                     <td>　</td>
                     <td>　</td>
@@ -123,58 +128,27 @@
                     <td>　</td>
                     <td>　</td>
                     <td>　</td>
-                    <td>-4</td>
-                    <td>-7</td>
-                    <td>-6</td>
+                    <td class="heatmap">-4</td>
+                    <td class="heatmap">-7</td>
+                    <td class="heatmap">-6</td>
                 </tr>
                 <tr>
-                    <td> H1-2-2 The infographic's graphics and texts stand out from the&nbsp;&nbsp;&nbsp;background</td>
-                    <td>1</td>
+                    <td id="H1-2-2" onclick="seeExp(this.id)"> H1-2-2 The infographic's graphics and texts stand out from the background</td>
+                    <td class="heatmap">1</td>
                     <td>　</td>
                     <td>　</td>
-                    <td>2</td>
-                    <td>　</td>
-                    <td>　</td>
-                    <td>　</td>
-                    <td>　</td>
-                    <td>　</td>
-                    <td>-1</td>
-                    <td>　</td>
-                    <td>　</td>
-                </tr>
-                <tr>
-                    <td> H1-2-3 The infographic has no spelling or grammar errors</td>
+                    <td class="heatmap">2</td>
                     <td>　</td>
                     <td>　</td>
                     <td>　</td>
                     <td>　</td>
                     <td>　</td>
-                    <td>　</td>
-                    <td>　</td>
-                    <td>　</td>
-                    <td>　</td>
-                    <td>-1</td>
+                    <td class="heatmap">-1</td>
                     <td>　</td>
                     <td>　</td>
                 </tr>
                 <tr>
-                    <td rowspan="3">H1-3<br>Messaging</td>
-                    <td> H1-3-1 The infographic provides clear labels and legends for data&nbsp;&nbsp;&nbsp;visualization</td>
-                    <td>2</td>
-                    <td>　</td>
-                    <td>　</td>
-                    <td>　</td>
-                    <td>　</td>
-                    <td>　</td>
-                    <td>　</td>
-                    <td>　</td>
-                    <td>　</td>
-                    <td>-1</td>
-                    <td>-1</td>
-                    <td>-1</td>
-                </tr>
-                <tr>
-                    <td> H1-3-2 The infographic provides contextual information for data&nbsp;&nbsp;&nbsp;visualization</td>
+                    <td id="H1-2-3" onclick="seeExp(this.id)"> H1-2-3 The infographic has no spelling or grammar errors</td>
                     <td>　</td>
                     <td>　</td>
                     <td>　</td>
@@ -184,216 +158,247 @@
                     <td>　</td>
                     <td>　</td>
                     <td>　</td>
-                    <td>-5</td>
-                    <td>-2</td>
-                    <td>-1</td>
-                </tr>
-                <tr>
-                    <td> H1-3-3 The infographic provides detailed explanation for data&nbsp;&nbsp;&nbsp;visualization</td>
-                    <td>5</td>
-                    <td>　</td>
-                    <td>1</td>
-                    <td>4</td>
-                    <td>　</td>
-                    <td>　</td>
-                    <td>-1</td>
-                    <td>　</td>
-                    <td>　</td>
-                    <td>-2</td>
-                    <td>-3</td>
-                    <td>　</td>
-                </tr>
-                <tr>
-                    <td rowspan="2">H1-4<br>Credibility</td>
-                    <td> H1-4-1 The infographic presents information in an impartial way</td>
-                    <td>　</td>
-                    <td>　</td>
-                    <td>　</td>
-                    <td>　</td>
-                    <td>　</td>
-                    <td>　</td>
-                    <td>　</td>
-                    <td>　</td>
-                    <td>　</td>
-                    <td>　</td>
-                    <td>　</td>
-                    <td>-2</td>
-                </tr>
-                <tr>
-                    <td> H1-4-2 The infographic uses data that is valid and clearly collated</td>
-                    <td>1</td>
-                    <td>　</td>
-                    <td>　</td>
-                    <td>　</td>
-                    <td>　</td>
-                    <td>　</td>
-                    <td>　</td>
-                    <td>　</td>
-                    <td>　</td>
-                    <td>　</td>
-                    <td>　</td>
-                    <td>-2</td>
-                </tr>
-                <tr>
-                    <td rowspan="11">H2<br>Expressivess</td>
-                    <td rowspan="6">H2-1<br>Embodiment</td>
-                    <td> H2-1-1 The&nbsp;&nbsp;&nbsp;infographic incorporates topic-relevant imagery into visualization</td>
-                    <td>4</td>
-                    <td>1</td>
-                    <td>　</td>
-                    <td>2</td>
-                    <td>2</td>
-                    <td>　</td>
-                    <td>1</td>
-                    <td>2</td>
-                    <td>　</td>
-                    <td>-1</td>
+                    <td class="heatmap">-1</td>
                     <td>　</td>
                     <td>　</td>
                 </tr>
                 <tr>
-                    <td> H2-1-2 The&nbsp;&nbsp;&nbsp;infographic uses topic-relevant imagery as embellishment</td>
-                    <td>7</td>
-                    <td>1</td>
-                    <td>1</td>
-                    <td>3</td>
+                    <td style="text-align: center; " rowspan="3 ">H1-3<br>Messaging</td>
+                    <td id="H1-3-1" onclick="seeExp(this.id)"> H1-3-1 The infographic provides clear labels and legends for data visualization</td>
+                    <td class="heatmap">2</td>
                     <td>　</td>
-                    <td>1</td>
-                    <td>1</td>
-                    <td>3</td>
-                    <td>1</td>
                     <td>　</td>
-                    <td>-1</td>
+                    <td>　</td>
+                    <td>　</td>
+                    <td>　</td>
+                    <td>　</td>
+                    <td>　</td>
+                    <td>　</td>
+                    <td class="heatmap">-1</td>
+                    <td class="heatmap">-1</td>
+                    <td class="heatmap">-1</td>
+                </tr>
+                <tr>
+                    <td id="H1-3-2" onclick="seeExp(this.id)"> H1-3-2 The infographic provides contextual information for data visualization</td>
+                    <td>　</td>
+                    <td>　</td>
+                    <td>　</td>
+                    <td>　</td>
+                    <td>　</td>
+                    <td>　</td>
+                    <td>　</td>
+                    <td>　</td>
+                    <td>　</td>
+                    <td class="heatmap">-5</td>
+                    <td class="heatmap">-2</td>
+                    <td class="heatmap">-1</td>
+                </tr>
+                <tr>
+                    <td id="H1-3-3" onclick="seeExp(this.id)"> H1-3-3 The infographic provides detailed explanation for data visualization</td>
+                    <td class="heatmap">5</td>
+                    <td>　</td>
+                    <td class="heatmap">1</td>
+                    <td class="heatmap">4</td>
+                    <td>　</td>
+                    <td>　</td>
+                    <td class="heatmap">-1</td>
+                    <td>　</td>
+                    <td>　</td>
+                    <td class="heatmap">-2</td>
+                    <td class="heatmap">-3</td>
                     <td>　</td>
                 </tr>
                 <tr>
-                    <td> H2-1-3 The infographic uses bright/dark color for positive/negative tone</td>
-                    <td>2</td>
+                    <td style="text-align: center; " rowspan="2 ">H1-4<br>Credibility</td>
+                    <td id="H1-4-1" onclick="seeExp(this.id)"> H1-4-1 The infographic presents information in an impartial way</td>
                     <td>　</td>
                     <td>　</td>
                     <td>　</td>
                     <td>　</td>
-                    <td>1</td>
-                    <td>1</td>
-                    <td>1</td>
                     <td>　</td>
                     <td>　</td>
+                    <td>　</td>
+                    <td>　</td>
+                    <td>　</td>
+                    <td>　</td>
+                    <td>　</td>
+                    <td class="heatmap">-2</td>
+                </tr>
+                <tr>
+                    <td id="H1-4-2" onclick="seeExp(this.id)"> H1-4-2 The infographic uses data that is valid and clearly collated</td>
+                    <td class="heatmap">1</td>
+                    <td>　</td>
+                    <td>　</td>
+                    <td>　</td>
+                    <td>　</td>
+                    <td>　</td>
+                    <td>　</td>
+                    <td>　</td>
+                    <td>　</td>
+                    <td>　</td>
+                    <td>　</td>
+                    <td class="heatmap">-2</td>
+                </tr>
+                <tr>
+                    <td style="text-align: center; " rowspan="11 ">H2<br>Expressivess</td>
+                    <td style="text-align: center; " rowspan="6 ">H2-1<br>Embodiment</td>
+                    <td id="H2-1-1" onclick="seeExp(this.id)"> H2-1-1 The infographic incorporates topic-relevant imagery into visualization</td>
+                    <td class="heatmap">4</td>
+                    <td class="heatmap">1</td>
+                    <td>　</td>
+                    <td class="heatmap">2</td>
+                    <td class="heatmap">2</td>
+                    <td>　</td>
+                    <td class="heatmap">1</td>
+                    <td class="heatmap">2</td>
+                    <td>　</td>
+                    <td class="heatmap">-1</td>
                     <td>　</td>
                     <td>　</td>
                 </tr>
                 <tr>
-                    <td> H2-1-4 The infographic uses warm/cold color for positive/negative tone</td>
-                    <td>2</td>
+                    <td id="H2-1-2" onclick="seeExp(this.id)"> H2-1-2 The infographic uses topic-relevant imagery as embellishment</td>
+                    <td class="heatmap">7</td>
+                    <td class="heatmap">1</td>
+                    <td class="heatmap">1</td>
+                    <td class="heatmap">3</td>
+                    <td>　</td>
+                    <td class="heatmap">1</td>
+                    <td class="heatmap">1</td>
+                    <td class="heatmap">3</td>
+                    <td class="heatmap">1</td>
+                    <td>　</td>
+                    <td class="heatmap">-1</td>
+                    <td>　</td>
+                </tr>
+                <tr>
+                    <td id="H2-1-3" onclick="seeExp(this.id)"> H2-1-3 The infographic uses bright/dark color for positive/negative tone</td>
+                    <td class="heatmap">2</td>
                     <td>　</td>
                     <td>　</td>
                     <td>　</td>
                     <td>　</td>
-                    <td>　</td>
-                    <td>1</td>
-                    <td>1</td>
+                    <td class="heatmap">1</td>
+                    <td class="heatmap">1</td>
+                    <td class="heatmap">1</td>
                     <td>　</td>
                     <td>　</td>
                     <td>　</td>
                     <td>　</td>
                 </tr>
                 <tr>
-                    <td> H2-1-5 The infographic is of high/low colorfulness for&nbsp;&nbsp;&nbsp;positive/negative tone</td>
-                    <td>6</td>
-                    <td>　</td>
-                    <td>3</td>
-                    <td>2</td>
-                    <td>　</td>
-                    <td>1</td>
-                    <td>　</td>
-                    <td>　</td>
-                    <td>　</td>
-                    <td>-4</td>
-                    <td>-2</td>
-                    <td>　</td>
-                </tr>
-                <tr>
-                    <td> H2-1-6 The infographic uses semantically-resonate colors</td>
-                    <td>2</td>
-                    <td>1</td>
-                    <td>　</td>
-                    <td>1</td>
-                    <td>　</td>
-                    <td>　</td>
-                    <td>1</td>
-                    <td>　</td>
-                    <td>2</td>
-                    <td>　</td>
-                    <td>　</td>
-                    <td>-1</td>
-                </tr>
-                <tr>
-                    <td rowspan="3">H2-2 <br>Narrative</td>
-                    <td> H2-3-1 The infographic highlights key data facts</td>
-                    <td>2</td>
-                    <td>11</td>
-                    <td>1</td>
-                    <td>1</td>
-                    <td>2</td>
-                    <td>1</td>
-                    <td>7</td>
-                    <td>4</td>
-                    <td>3</td>
-                    <td>　</td>
-                    <td>1</td>
-                    <td>1</td>
-                </tr>
-                <tr>
-                    <td> H2-3-2 The infographic addresses the audience directly</td>
-                    <td>1</td>
-                    <td>1</td>
+                    <td id="H2-1-4" onclick="seeExp(this.id)"> H2-1-4 The infographic uses warm/cold color for positive/negative tone</td>
+                    <td class="heatmap">2</td>
                     <td>　</td>
                     <td>　</td>
                     <td>　</td>
                     <td>　</td>
                     <td>　</td>
+                    <td class="heatmap">1</td>
+                    <td class="heatmap">1</td>
                     <td>　</td>
                     <td>　</td>
-                    <td>-1</td>
-                    <td>　</td>
-                    <td>-1</td>
-                </tr>
-                <tr>
-                    <td> H2-3-3 The infographic uses strong wording</td>
-                    <td>2</td>
-                    <td>　</td>
-                    <td>　</td>
-                    <td>1</td>
-                    <td>　</td>
-                    <td>　</td>
-                    <td>　</td>
-                    <td>1</td>
-                    <td>1</td>
-                    <td>　</td>
-                    <td>　</td>
-                    <td>1</td>
-                </tr>
-                <tr>
-                    <td rowspan="2">H2-3<br>Uniqueness</td>
-                    <td> H2-2-3 The infographic uses novel data visualization</td>
-                    <td>7</td>
-                    <td>　</td>
-                    <td>　</td>
-                    <td>1</td>
-                    <td>4</td>
-                    <td>　</td>
-                    <td>　</td>
-                    <td>　</td>
-                    <td>　</td>
-                    <td>-2</td>
                     <td>　</td>
                     <td>　</td>
                 </tr>
                 <tr>
-                    <td> H2-2-4 The infographic has a salient style or personality</td>
-                    <td>1</td>
+                    <td id="H2-1-5" onclick="seeExp(this.id)"> H2-1-5 The infographic is of high/low colorfulness for&nbsp;&nbsp;&nbsp;positive/negative tone</td>
+                    <td class="heatmap">6</td>
                     <td>　</td>
-                    <td>1</td>
-                    <td>1</td>
+                    <td class="heatmap">3</td>
+                    <td class="heatmap">2</td>
+                    <td>　</td>
+                    <td class="heatmap">1</td>
+                    <td>　</td>
+                    <td>　</td>
+                    <td>　</td>
+                    <td class="heatmap">-4</td>
+                    <td class="heatmap">-2</td>
+                    <td>　</td>
+                </tr>
+                <tr>
+                    <td id="H2-1-6" onclick="seeExp(this.id)"> H2-1-6 The infographic uses semantically-resonate colors</td>
+                    <td class="heatmap">2</td>
+                    <td class="heatmap">1</td>
+                    <td>　</td>
+                    <td class="heatmap">1</td>
+                    <td>　</td>
+                    <td>　</td>
+                    <td class="heatmap">1</td>
+                    <td>　</td>
+                    <td class="heatmap">2</td>
+                    <td>　</td>
+                    <td>　</td>
+                    <td class="heatmap">-1</td>
+                </tr>
+                <tr>
+                    <td style="text-align: center; " rowspan="3 ">H2-2 <br>Narrative</td>
+                    <td id="H2-2-1" onclick="seeExp(this.id)"> H2-2-1 The infographic highlights key data facts</td>
+                    <td class="heatmap">2</td>
+                    <td class="heatmap">11</td>
+                    <td class="heatmap">1</td>
+                    <td class="heatmap">1</td>
+                    <td class="heatmap">2</td>
+                    <td class="heatmap">1</td>
+                    <td class="heatmap">7</td>
+                    <td class="heatmap">4</td>
+                    <td class="heatmap">3</td>
+                    <td>　</td>
+                    <td class="heatmap">1</td>
+                    <td class="heatmap">1</td>
+                </tr>
+                <tr>
+                    <td id="H2-2-2" onclick="seeExp(this.id)"> H2-2-2 The infographic addresses the audience directly</td>
+                    <td class="heatmap">1</td>
+                    <td class="heatmap">1</td>
+                    <td>　</td>
+                    <td>　</td>
+                    <td>　</td>
+                    <td>　</td>
+                    <td>　</td>
+                    <td>　</td>
+                    <td>　</td>
+                    <td class="heatmap">-1</td>
+                    <td>　</td>
+                    <td class="heatmap">-1</td>
+                </tr>
+                <tr>
+                    <td id="H2-2-3" onclick="seeExp(this.id)"> H2-2-3 The infographic uses strong wording</td>
+                    <td class="heatmap">2</td>
+                    <td>　</td>
+                    <td>　</td>
+                    <td class="heatmap">1</td>
+                    <td>　</td>
+                    <td>　</td>
+                    <td>　</td>
+                    <td class="heatmap">1</td>
+                    <td class="heatmap">1</td>
+                    <td>　</td>
+                    <td>　</td>
+                    <td class="heatmap">1</td>
+                </tr>
+                <tr>
+                    <td style="text-align: center; " rowspan="2 ">H2-3<br>Uniqueness</td>
+                    <td id="H2-3-1" onclick="seeExp(this.id)"> H2-3-1 The infographic uses novel data visualization</td>
+                    <td class="heatmap">7</td>
+                    <td>　</td>
+                    <td>　</td>
+                    <td class="heatmap">1</td>
+                    <td class="heatmap">4</td>
+                    <td>　</td>
+                    <td>　</td>
+                    <td>　</td>
+                    <td>　</td>
+                    <td class="heatmap">-2</td>
+                    <td>　</td>
+                    <td>　</td>
+                </tr>
+                <tr>
+                    <td id="H2-3-2" onclick="seeExp(this.id)"> H2-3-2 The infographic has a salient style or personality</td>
+                    <td class="heatmap">1</td>
+                    <td>　</td>
+                    <td class="heatmap">1</td>
+                    <td class="heatmap">1</td>
                     <td>　</td>
                     <td>　</td>
                     <td>　</td>
@@ -406,15 +411,13 @@
             </tbody>
         </table>
 
-
     </div>
 
 
 
 
 
-
-    <script type="text/javascript">
+    <script type="text/javascript ">
         //=================功能===tab切换===============
         function setTab(name, cursel, n) {
             for (var i = 1; i <= n; i++) {
@@ -423,105 +426,59 @@
                 var con = document.getElementById("con_" + name + "_" + i);
                 //被点击后
                 if (i == cursel) {
-                    menu.style.color = "black";
+                    menu.style.color = "black ";
                     menu.style.background = "#FFE82D";
                 } else {
-                    menu.style.color = "white";
+                    menu.style.color = "white ";
                     menu.style.background = "transparent";
                 }
                 con.style.display = i == cursel ? "block" : "none";
             }
         }
-
         //默认选中
         document.getElementById("one1").click();
     </script>
 
 
-
-
     <!-- draw function -->
-    <script type="text/javascript">
-        //=================功能===填色===============
-        //table fill color  && star img
-        var colName;
-        var sumName;
-
+    <script type="text/javascript ">
         function setHeatmap(theme) {
-            for (var c = 1; c <= 9; c++) {
-                for (var r = 1; r <= 18; r++) {
-                    colName = "s" + c + r;
-                    sumName = "s" + c + "Sum";
-                    if (r <= 9) {
-                        colName = "s" + c + "0" + r;
-                    }
+            var cells = document.getElementsByClassName("heatmap")
+            for (var i = 0; i < cells.length; i++) {
+                var value = cells[i].innerHTML;
+                cells[i].style.setProperty('background-color', theme + value / 16 + ')');
 
-                    var parent = document.getElementsByName(colName)[0];
-                    var value = parent.innerHTML;
-                    var sum = document.getElementsByName(sumName)[0].innerHTML;
-                    var ratio = value / sum;
-
-                    parent.style.setProperty('background-color', theme + value / 16 + ')');
-
-                    //四级
-                    // if (15 <= ratio) { //此级没有数字
-                    //     // var img = document.createElement("img");
-                    //     // img.setAttribute("src", "src/star.png");
-                    //     // img.setAttribute("height", "10px");
-                    //     // img.setAttribute("width", "10px");
-                    //     // parent.appendChild(img);
-                    //     parent.style.setProperty('background-color', theme + 1 + ')');
-                    //     // parent.style.setProperty('opacity', 1);
-
-                    // }
-                    // if (10 <= ratio && ratio < 15) {
-                    //     // var img = document.createElement("img");
-                    //     // img.setAttribute("src", "src/star.png");
-                    //     // img.setAttribute("height", "10px");
-                    //     // img.setAttribute("width", "10px");
-                    //     // parent.appendChild(img);
-                    //     parent.style.setProperty('background-color', theme + 1 + ')');
-                    //     // parent.style.setProperty('opacity', 1);
-
-                    // }
-                    // if (5 <= ratio && ratio < 10) {
-                    //     parent.style.setProperty('background-color', theme + 0.8 + ')');
-                    //     // parent.style.setProperty('opacity', 0.8);
-
-                    // }
-
-                    // if (1 <= ratio && ratio < 5) {
-                    //     parent.style.setProperty('background-color', theme + 0.6 + ')');
-                    //     // parent.style.setProperty('opacity', 0.6);
-
-                    // }
-                    // if (0.2 <= ratio && ratio < 0.3) {
-                    //     parent.style.setProperty('background-color', theme + 0.4 + ')');
-                    //     // parent.style.setProperty('opacity', 0.4);
-
-                    // }
-                    // if (0 < ratio && ratio < 0.2) {
-                    //     parent.style.setProperty('background-color', theme + 0.2 + ')');
-                    //     // parent.style.setProperty('opacity', 0.2);
-
-                    // }
-                }
             }
         }
-
         setHeatmap('rgba(108, 155, 239,')
     </script>
 
 
+    <script type="text/javascript ">
+        function seeExp(clicked_id) {
+            console.log(clicked_id)
+            example_info =
+                document.getElementById('example').style.display = "block";
+            document.getElementById('example_pic').src = "./corpus/" + examples[clicked_id]['src']
+        }
+    </script>
+
+    <script>
+        $(document).ready(function() {
+            $('#btClose').click(function() {
+                $('#example').css('display', 'none');
+            });
+        });
+    </script>
 
     <!-- click function -->
-    <script type="text/javascript">
+    <script type="text/javascript ">
         //=================功能=============================tooltip
         function detaTitle() {
-            var deta_title = document.querySelectorAll("[deta-title]");
+            var deta_title = document.querySelectorAll("[deta-title] ");
             for (var i = 0; i < deta_title.length; i++) {
-                deta_title[i].setAttribute("deta-title", deta_title[i].getAttribute("title"));
-                deta_title[i].removeAttribute("title");
+                deta_title[i].setAttribute("deta-title ", deta_title[i].getAttribute("title "));
+                deta_title[i].removeAttribute("title ");
             }
         }
         detaTitle();
@@ -536,67 +493,6 @@
 
 
 
-        function show() {
-            //offsetHeight 需要动态获取	
-            var margin = 10;
-            var boxes = document.getElementsByClassName('imgShow');
-
-            var con = document.getElementsByClassName('container-fluid'); //fix
-            var text = document.getElementsByTagName('h4');
-            var boxWidth = boxes[0] ? boxes[0].offsetWidth + margin : 400 + margin; //offsetWidth 固定为400
-
-            var columnHeight = [];
-            var bodyWidth = document.body.offsetWidth;
-            var n = parseInt(bodyWidth / boxWidth);
-            var columnNum = n == 0 ? 1 : n;
-            var bodyLeft = bodyWidth >= boxWidth ? bodyWidth - columnNum * boxWidth : 0;
-            con[0].style.left = parseInt(bodyLeft / 2) - margin / 2 + 'px';
-
-
-
-
-            //console.log(boxes, boxes[0].offsetHeight)
-            for (var i = 0, l = boxes.length; i < l; i++) {
-
-
-                if (i < columnNum) {
-                    columnHeight[i] = boxes[i].offsetHeight + margin;
-                    boxes[i].style.top = 0;
-                    boxes[i].style.left = i * boxWidth + margin + 'px';
-                } else {
-                    var innsertColumn = min(columnHeight),
-                        imgHeight = boxes[i].offsetHeight + margin;
-                    boxes[i].style.top = columnHeight[innsertColumn] + 'px';
-                    boxes[i].style.left = innsertColumn * boxWidth + margin + 'px';
-                    columnHeight[innsertColumn] += imgHeight;
-                };
-
-
-                //console.log(i,boxes,boxes[i].offsetWidth,boxes[i].offsetHeight,boxes[i].style.top) // load完成之前 height都是22
-
-            };
-        };
-
-        function min(heightAarry) {
-            var minColumn = 0;
-            var minHeight = heightAarry[minColumn];
-            for (var i = 1, len = heightAarry.length; i < len; i++) {
-                var temp = heightAarry[i];
-                if (temp < minHeight) {
-                    minColumn = i;
-                    minHeight = temp;
-                };
-            };
-            return minColumn;
-        }
-        window.onload = function() {
-            show();
-        };
-        window.onresize = function() {
-            show();
-        };
-
-
 
         //============功能==d3 事件============点击表格触发
         var url = window.location.href,
@@ -609,71 +505,71 @@
         var emotionText = 0;
         var table = new Array();
 
-        url = url.split("?");
+        url = url.split("? ");
 
         if (url.length > 1) {
             idx = parseInt(url[1]) - 1;
-            d3.select("#cue-overlay-container")
-                .classed("show", true);
+            d3.select("#cue-overlay-container ")
+                .classed("show ", true);
         };
 
-        d3.selectAll(".active-cell")
-            .on("mouseover", function() {
-                var classname = d3.select(this).attr("name");
-                d3.selectAll("." + classname)
-                    .classed("highlighted", true);
-                // .style("highlighted",true);
-                // d3.selectAll(".active-cell")
-                //   .classed("highlighted",true);
+        d3.selectAll(".active-cell ")
+            .on("mouseover ", function() {
+                var classname = d3.select(this).attr("name ");
+                d3.selectAll(". " + classname)
+                    .classed("highlighted ", true);
+                // .style("highlighted ",true);
+                // d3.selectAll(".active-cell ")
+                //   .classed("highlighted ",true);
                 return;
             })
-            .on("mouseout", function() {
-                var classname = d3.select(this).attr("name");
-                d3.selectAll("." + classname)
-                    .classed("highlighted", false);
+            .on("mouseout ", function() {
+                var classname = d3.select(this).attr("name ");
+                d3.selectAll(". " + classname)
+                    .classed("highlighted ", false);
                 return;
             })
-            .on("mouseup", function() {
-                var classname = d3.select(this).attr("name");
+            .on("mouseup ", function() {
+                var classname = d3.select(this).attr("name ");
                 //获取格子的横纵属性用于查询
-                skill = "si" + classname.slice(2, 4);
+                skill = "si " + classname.slice(2, 4);
                 emotion = classname.slice(1, 2); //1 happy 2 surprised 3 a  4 concerned
-                console.log("emotion" + emotion)
+                console.log("emotion " + emotion)
                 switch (emotion) {
-                    case "1":
-                        emotion = emotionText = "happy";
+                    case "1 ":
+                        emotion = emotionText = "happy ";
                         break;
 
-                    case "2":
-                        emotion = emotionText = "surprised";
+                    case "2 ":
+                        emotion = emotionText = "surprised ";
                         break;
 
-                    case "3":
-                        emotion = emotionText = "exicted";
+                    case "3 ":
+                        emotion = emotionText = "exicted ";
                         break;
 
-                    case "4":
-                        emotion = emotionText = "content";
+                    case "4 ":
+                        emotion = emotionText = "content ";
                         break;
 
-                    case "5":
-                        emotion = emotionText = "awestruck";
+                    case "5 ":
+                        emotion = emotionText = "awestruck ";
                         break;
 
-                    case "6":
-                        emotion = emotionText = "hopeful";
+                    case "6 ":
+                        emotion = emotionText = "hopeful ";
                         break;
 
-                    case "7":
-                        emotion = emotionText = "sad";
+                    case "7 ":
+                        emotion = emotionText = "sad ";
                         break;
 
-                    case "8":
-                        emotion = emotionText = "concerned";
+                    case "8 ":
+                        emotion = emotionText = "concerned ";
                         break;
 
-                    case "9":
-                        emotion = emotionText = "shocked";
+                    case "9 ":
+                        emotion = emotionText = "shocked ";
                         break;
 
                     default:
@@ -696,18 +592,18 @@
                 if (idl != 0) {
                     //addContent(table); //将查询到的内容增加到fluid页面中 1.0
 
-                    var Fall = document.getElementById("water-fall-container");
+                    var Fall = document.getElementById("water-fall-container ");
                     addWaterfall(table, Fall); //将查询到的内容增加到waterfall页面中 2.0
 
                     show();
                     //sleep(1000); // 延时函数，单位ms
 
-                    d3.select("#cue-overlay-container")
-                        .classed("show", true);
+                    d3.select("#cue-overlay-container ")
+                        .classed("show ", true);
                 }
 
                 setTimeout(function() {
-                    $(window).trigger("resize");
+                    $(window).trigger("resize ");
                 }, 2000);
 
                 return;
@@ -715,51 +611,37 @@
 
         function addContent(table) {
             //需要vpn
-            var data = table != "" ? table[idp] : cues[3];
-            title = d3.select("#title"),
-                description = d3.select("#description").select("p"),
-                source = d3.select("#source"),
-                gif = d3.select("#gif"),
-                topic = d3.select("#topic"),
-                dim1 = d3.select("#d1"),
-                dim2 = d3.select("#d2"),
-                dim3 = d3.select("#d3"),
-                dim4 = d3.select("#d4"),
-                dim5 = d3.select("#d5"),
-                dim6 = d3.select("#d6"),
-                // dim7 = d3.select("#d7");
-                title.html(emotionText + " " + (idp + 1) + "/" + idl);
-            gif.attr("src", data.link)
-                .attr("loop", "infinite");
+            var data = table != " " ? table[idp] : cues[3];
+            title = d3.select("#title "),
+                description = d3.select("#description ").select("p "),
+                source = d3.select("#source "),
+                gif = d3.select("#gif "),
+                topic = d3.select("#topic "),
+                dim1 = d3.select("#d1 "),
+                dim2 = d3.select("#d2 "),
+                dim3 = d3.select("#d3 "),
+                dim4 = d3.select("#d4 "),
+                dim5 = d3.select("#d5 "),
+                dim6 = d3.select("#d6 "),
+                // dim7 = d3.select("#d7 ");
+                title.html(emotionText + " " + (idp + 1) + "/ " + idl);
+            gif.attr("src ", data.link)
+                .attr("loop ", "infinite ");
             var src = data.link; //识别本地图片和网络图片
             debugger;
-            // if (data.link.indexOf("src/") != -1) {
-            //     src = "https://infographics-test.s3-us-west-1.amazonaws.com/" + data.link.slice(4)
+            // if (data.link.indexOf("src/ ") != -1) {
+            //     src = "https://infographics-test.s3-us-west-1.amazonaws.com/ " + data.link.slice(4)
             // }
-            source.html("<a href='" + src + "'>" + src + "</a>");
-            // topic.html(data.topic);
-            // description.html(data.des);
-
-            var skillList1 = [];
-            var skillList2 = [];
-            var skillList3 = [];
-            var skillList4 = [];
-            var skillList5 = [];
-            var skillList6 = [];
-            // document.getElementById("gif").src = data.link;
-            for (var m = 1; m < 39; m++) {
+            source.html("<a href='" + src + "'>" + src + "</a>"); // topic.html(data.topic); // description.html(data.des); var skillList1 = []; var skillList2 = []; var skillList3 = []; var skillList4 = []; var skillList5 = []; var skillList6 = []; // document.getElementById("gif").src = data.link;
+            for (var m = 1; m <
+                39; m++) {
                 var skillNum = "si" + m;
                 if (m < 10) {
                     skillNum = "si" + "0" + m;
                 }
                 if (data[skillNum] == 1 && document.getElementById(skillNum)) {
-                    if (0 < m && m <= 6) {
-                        // if(skillList1==""){skillList1.push("●  "+document.getElementById(skillNum).innerHTML)}
-                        // else{skillList1.push("<br>●  "+document.getElementById(skillNum).innerHTML)}
-                        skillList1.push("<br>●  " + document.getElementById(skillNum).innerHTML)
-                    }
-                    if (6 < m && m <= 13) {
-                        skillList2.push("<br>●  " + document.getElementById(skillNum).innerHTML)
+                    if (0 < m && m <= 6) { // if(skillList1=="" ){skillList1.push( "●  "+document.getElementById(skillNum).innerHTML)}
+                        // else{skillList1.push( "<br>●  "+document.getElementById(skillNum).innerHTML)} skillList1.push( "<br>●  " + document.getElementById(skillNum).innerHTML) } if (6 < m && m <=1 3) { skillList2.push( "<br>●  " + document.getElementById(skillNum).innerHTML)
                     }
                     if (13 < m && m <= 19) {
                         skillList3.push("<br>●  " + document.getElementById(skillNum).innerHTML)
@@ -768,70 +650,43 @@
                         skillList4.push("<br>●  " + document.getElementById(skillNum).innerHTML)
                     }
                     if (27 < m && m <= 31) {
-                        skillList5.push("<br>●  " + document.getElementById(skillNum).innerHTML)
+                        skillList5.push(
+                            "<br>●  " + document.getElementById(skillNum).innerHTML)
                     }
                     if (31 < m) {
                         skillList6.push("<br>●  " + document.getElementById(skillNum).innerHTML)
                     }
                 }
-            } //为每张图片定制显示的skill
-
-
-            if (skillList2 == "") {
-                skillList2.push("None");
-            }
-            if (skillList3 == "") {
-                skillList3.push("None");
-            }
-            if (skillList4 == "") {
-                skillList4.push("None");
-            }
-            if (skillList5 == "") {
-                skillList5.push("None");
-            }
-            if (skillList6 == "") {
-                skillList6.push("None");
-            }
-
-            dim1.html(skillList1);
-            dim2.html(skillList2);
-            dim3.html(skillList3);
-            dim4.html(skillList4);
-            dim5.html(skillList5);
-            dim6.html(skillList6);
-            // dim7.html(data.d7);
+            } //为每张图片定制显示的skill if (skillList2=="" ) { skillList2.push( "None"); } if (skillList3=="" ) { skillList3.push(
+            "None");
+        }
+        if (skillList4 == "") {
+            skillList4.push("None");
+        }
+        if (skillList5 == "") {
+            skillList5.push("None");
+        }
+        if (skillList6 == "") {
+            skillList6.push("None");
+        }
+        dim1.html(skillList1);
+        dim2.html(skillList2);
+        dim3.html(skillList3);
+        dim4.html(skillList4);
+        dim5.html(skillList5);
+        dim6.html(skillList6); // dim7.html(data.d7); return; }; //前进后退关闭按钮 d3.select( ".chevron-right") .on( "mouseup", function() { if (idp < idl - 1) { //length idp=i dp + 1; } else { idp=0 ; }; addContent(table); }); d3.select(
+        ".chevron-left").on("mouseup", function() {
+            if (idp > 0) {
+                idp = idp - 1;
+            } else {
+                idp = idl - 1;
+            };
+            addContent(table);
+        });
+        d3.select(".glyphicon-close").on("mouseup", function() {
+            d3.select("#cue-overlay-container").classed("show", false);
             return;
-        };
-
-
-
-
-
-        //前进后退关闭按钮
-        d3.select(".chevron-right")
-            .on("mouseup", function() {
-                if (idp < idl - 1) { //length
-                    idp = idp + 1;
-                } else {
-                    idp = 0;
-                };
-                addContent(table);
-            });
-        d3.select(".chevron-left")
-            .on("mouseup", function() {
-                if (idp > 0) {
-                    idp = idp - 1;
-                } else {
-                    idp = idl - 1;
-                };
-                addContent(table);
-            });
-        d3.select(".glyphicon-close")
-            .on("mouseup", function() {
-                d3.select("#cue-overlay-container")
-                    .classed("show", false);
-                return;
-            });
+        });
     </script>
     </script>
 
