@@ -373,7 +373,7 @@
                         <td class="heatmap">-1</td>
                     </tr>
                     <tr>
-                        <td id="H2-2-3" onclick="seeExp(this.id)"> <strong>H2-2-3</strong> The infographic uses strong wording</td>
+                        <td id="H2-2-3" onclick="seeExp(this.id)"> <strong>H2-2-3</strong> The infographic uses powerful wording</td>
                         <td class="heatmap">2</td>
                         <td>　</td>
                         <td>　</td>
@@ -739,7 +739,7 @@
         var schema = [{
             name: 'id',
             index: 0,
-            text: 'EmoVis id'
+            text: 'Dataset id'
         }, {
             name: 'emotion',
             index: 1,
@@ -826,10 +826,10 @@
                 formatter: function(obj) {
                     var value = obj.value;
                     return '<div style="border-bottom: 1px solid rgba(255,255,255,.3); font-size: 18px;padding-bottom: 7px;margin-bottom: 7px">' +
-                        'EmoVis Id: ' + value[2] +
+                        'Dataset Id: ' + value[2] +
                         '</div>' +
                         // '<img src= "./src/5.jpg"></img>' + '<br>' +
-                        '<img src= "emovis_thumb/thumb-' + value[2] + '.png' + '" style = "height:100px">' + '</img>' + '<br>' +
+                        '<img src= "corpus_thumb/thumb-' + value[2] + '.png' + '" style = "height:100px">' + '</img>' + '<br>' +
                         schema[1].text + '：' + value[4] + '<br>' +
                         schema[2].text + '：' + value[3] + '<br>'
                         // schema[3].text + '：' + value[5] + '<br>' +
@@ -1153,10 +1153,10 @@
                 formatter: function(obj) {
                     var value = obj.value;
                     return '<div style="border-bottom: 1px solid rgba(255,255,255,.3); font-size: 18px;padding-bottom: 7px;margin-bottom: 7px">' +
-                        'EmoVis id: ' + value[3] +
+                        'Dataset id: ' + value[3] +
                         '</div>' +
                         // '<img src= "./src/5.jpg"></img>' + '<br>' +
-                        '<img src= "emovis_thumb/thumb-' + value[3] + '.png' + '" style = "height:100px">' + '</img>' + '<br>' +
+                        '<img src= "corpus_thumb/thumb-' + value[3] + '.png' + '" style = "height:100px">' + '</img>' + '<br>' +
                         schema[1].text + '：' + value[5] + '<br>' +
                         schema[2].text + '：' + value[4] + '<br>'
                 }
